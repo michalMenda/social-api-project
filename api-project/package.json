@@ -1,0 +1,20 @@
+{
+    "name": "api-project",
+    "version": "1.0.0",
+    "description": "Full Stack Social API Project",
+    "scripts": {
+      "start": "concurrently \"npm run server\" \"npm run client\"",
+      "server": "cd server && npm run dev",
+      "client": "cd client && npm start",
+      "install-all": "npm install && cd server && npm install && cd ../client && npm install"
+    },
+    "devDependencies": {
+      "concurrently": "^7.6.0"
+    },
+    "dependencies": {
+      "dotenv": "^16.5.0",
+      "mysql2": "^3.14.1",
+      "path": "^0.12.7"
+    }
+  }
+  
