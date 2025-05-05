@@ -1,17 +1,22 @@
 const express = require('express');
-
 const app = express();
-const PORT = 3000;
+const cors = require('cors');
 
-// Middleware
+app.use(cors());
 app.use(express.json());
 
-// Routes
-app.get('/', (req, res) => {
-    res.send('Welcome to the API!');
-});
+// ROUTES
+const usersRoutes = require('./routes/users');
+const postsRoutes = require('./routes/posts');
+const todosRoutes = require('./routes/todos');
 
-// Start the server
+app.use('/users', usersRoutes);
+app.use('/users/:id/posts', postsRoutes);
+app.use('/users/:id/todos', todosRoutes);
+
+// START SERVER
+const PORT = 3000;
 app.listen(PORT, () => {
-    console.log(`Server is running on http://localhost:${PORT}`);
+    console.log(`🚀 Server running on port ${PORT}`);
 });
+console.log('🔧 Loading initial data...');
