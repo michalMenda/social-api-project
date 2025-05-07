@@ -1,0 +1,21 @@
+.image-container {
+    position: relative;
+    display: inline-block;
+    margin: 0.2vw;
+}
+
+.actions-buttons {
+    position: absolute;
+    top: 75%;
+    left: 30%;
+}
+.image-container {
+    position: relative;
+    display: inline-block;
+    margin: 0.2vw;
+}
+
+.photo-actions {
+    display: flex;
+    gap: 10px;
+}

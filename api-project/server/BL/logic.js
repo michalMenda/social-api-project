@@ -1,30 +1,30 @@
 const dal = require('../DAL/dal');
 
-// לדוגמה: ולידציה פשוטה לפני יצירת רשומה
+// יצירת רשומה
 async function createItem(table, data) {
-    // פה אפשר להוסיף חוקים – למשל בדיקות מיוחדות
     if (!data || Object.keys(data).length === 0) {
         throw new Error('Data is required');
     }
     return dal.create(table, data);
 }
 
-// Get all
-async function getAllItems(table) {
-    return dal.getAll(table);
+// שליפה עם סינון לפי query
+async function getAllItems(table, filters = {}) {
+    return dal.getAll(table, filters);
 }
 
-// Get by ID
+
+// שליפה לפי ID
 async function getItemById(table, id) {
     return dal.getById(table, id);
 }
 
-// Update
+// עדכון
 async function updateItem(table, id, data) {
     return dal.update(table, id, data);
 }
 
-// Delete
+// מחיקה
 async function deleteItem(table, id) {
     return dal.remove(table, id);
 }

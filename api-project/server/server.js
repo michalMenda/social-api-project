@@ -5,18 +5,15 @@ const cors = require('cors');
 app.use(cors());
 app.use(express.json());
 
-// ROUTES
-const usersRoutes = require('./routes/users');
-const postsRoutes = require('./routes/posts');
-const todosRoutes = require('./routes/todos');
+const createRouter = require('./routes');
 
-app.use('/users', usersRoutes);
-app.use('/users/:id/posts', postsRoutes);
-app.use('/users/:id/todos', todosRoutes);
+app.use('/users', createRouter('users'));
+app.use('/posts', createRouter('posts'));
+app.use('/comments', createRouter('comments'));
+app.use('/todos', createRouter('todos'));
 
 // START SERVER
 const PORT = 3000;
 app.listen(PORT, () => {
     console.log(`🚀 Server running on port ${PORT}`);
 });
-console.log('🔧 Loading initial data...');

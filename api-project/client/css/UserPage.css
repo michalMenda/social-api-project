@@ -1,0 +1,99 @@
+/* .animated-title {
+  font-size: 5rem; 
+  font-weight: bold;
+  text-align: center;
+  background: linear-gradient(90deg, 
+    #ff4f81,  
+    #ff7b98,   
+    #ff9c5b,  
+    #ffb76b,   
+    #f3f3f3,  
+    #ff7043,  
+    #ff4f81    
+  );
+  background-size: 200% 100%; 
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: colorFlow 12s infinite linear; 
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; 
+  min-height: 65vh;
+  margin: 0; 
+  padding-top: 10vh;
+  overflow: hidden; 
+  margin-top: 7vh;
+}
+
+@keyframes colorFlow {
+  0% {
+    background-position: 200% 0; 
+  }
+  100% {
+    background-position: -200% 0; 
+  }
+} */
+/* General Styling */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #f7f7f7;
+  color: #333;
+}
+
+/* Animated Title Styling */
+.animated-title {
+  font-size: 4.5rem;
+  font-weight: bold;
+  text-align: center;
+  background: linear-gradient(90deg, 
+    #ff4f81, 
+    #ff7b98, 
+    #ff9c5b, 
+    #ffb76b, 
+    #ebd6d6, 
+    #ff7043, 
+    #ff4f81);
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: colorFlow 8s infinite linear;
+  margin: 2rem 0;
+}
+
+@keyframes colorFlow {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+
+/* Welcome Section */
+.welcome-message {
+  font-size: 1.5rem;
+  text-align: center;
+  color: #b53333;
+  margin-top: 1rem;
+  padding: 0 1rem;
+  width: 30%;
+  padding-left: 50%;
+  padding-right: 20%;
+}
+
+
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .animated-title {
+    font-size: 3rem;
+  }
+
+  h1 {
+    font-size: 1.2rem;
+  }
+}

@@ -1,0 +1,84 @@
+.login-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff4a;
+}
+
+.login-input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.login-input:focus {
+    border-color: #991228;
+    outline: none;
+}
+
+.login-button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 20px;
+    background-color: #c01532;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.login-button:hover {
+    background-color: #991228;
+}
+
+.login-button:active {
+    background-color: #840f23;
+}
+
+.login-button:focus {
+   outline-color: #6f0e1e;
+}
+.error-message {
+    color: red;
+    font-size: 12px;
+    margin-top: 4px;
+    display: block;
+}
+
+.login-input.error {
+    border-color: red;
+}
+.switch-signup {
+    background: none; /* No background */
+    color: #d32f2f; /* Deep red text */
+    font-size: 16px;
+    font-weight: bold;
+    border: none; /* No border */
+    cursor: pointer;
+    text-decoration: underline; /* Mimic a link */
+    padding: 0; /* Remove padding for a clean, link-like appearance */
+    transition: color 0.3s ease; /* Smooth color transition on hover */
+  }
+  
+  .switch-signup:hover {
+    color: #b71c1c; /* Darker red on hover */
+    text-decoration: none; /* Remove underline on hover */
+  }
+  
+  .switch-signup:active {
+    color: #880e0e; /* Even darker red when clicked */
+  }
+  

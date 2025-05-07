@@ -1,0 +1,30 @@
+.comment-div {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 16px;
+    margin: 10px 0;
+    background-color: #f9f9f9;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.comment-email {
+    font-weight: bold;
+    color: #333;
+}
+
+.comment-name {
+    font-size: 1.2em;
+    margin-bottom: 8px;
+    color: #555;
+}
+
+.comment-body {
+    font-size: 1em;
+    color: #444;
+    margin-bottom: 12px;
+}
+
+.comment-actions {
+    display: flex;
+    gap: 10px;
+}

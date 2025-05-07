@@ -1,0 +1,232 @@
+.postContainer {
+  align-self: center;
+  width: 200%;
+  max-width: 700px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: rgba(248, 248, 248, 0.75);
+  border-radius: 8px;
+  border: 4px solid #e0e0e0;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+.postContainer:hover {
+  background-color: rgba(248, 248, 248, 0.90);
+}
+
+.postContainer p {
+  font-size: 1.1rem;
+  color: #333;
+  line-height: 1.6;
+  margin: 10px 0;
+}
+
+.postContainer .postTitle {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.postContainer .postData {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.postContainer button {
+  padding: 8px 15px;
+  font-size: 1rem;
+  background-color: #c01532;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.postContainer button:hover {
+  background-color: #a0122b;
+}
+
+.postContainer button:focus {
+  outline: none;
+}
+
+.actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  margin-top: 10px;
+}
+
+.actions-btn{
+  display: flex;
+}
+.actions-btn button{
+  position: sticky;
+max-height: 2em;
+
+}
+
+
+.actions .right-actions {
+  display: flex;
+  gap: 15px;
+}
+
+.actions .show-post-button {
+  padding: 8px 15px;
+  font-size: 1rem;
+  background-color: #c01532;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.actions .show-post-button:hover {
+  background-color: #a0122b;
+}
+
+.actions .show-post-button:focus {
+  outline: none;
+}
+
+.comment-container {
+  height: 300px;
+  overflow-y: scroll;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  background-color: #f9f9f9;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  max-width: 500px;
+  width: 90%;
+  text-align: center;
+  position: relative;
+}
+
+.modal button:focus {
+  outline: none;
+}
+
+.comment-button {
+  padding: 10px 15px;
+  background-color: #c01532;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.comment-button:hover {
+  background-color: #a0122b;
+}
+
+.comment-button:focus {
+  outline: none;
+}
+
+.modal button {
+  padding: 8px 15px;
+  font-size: 1rem;
+  background-color: #ffcccc;
+  color: #5b4347;
+  border: 2px solid #b4132e;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.modal button:hover {
+  background-color: #f0c0c0;
+}
+
+.close-button {
+  background-color: transparent !important;
+  color: #c01532;
+  font-size: 1.2rem;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 0;
+  transition: color 0.3s ease;
+}
+
+.close-button:hover {
+  background-color: transparent !important;
+  color: #c01532;
+}
+
+.close-button:focus {
+  outline: none;
+}
+
+.modal .close-button {
+  border: none;
+}
+
+
+.show-posts {
+  padding: 8px 15px;
+  font-size: 1rem;
+  background-color: #c01532;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-right: 10px;
+}
+
+.show-posts:hover {
+  background-color: #a0122b;
+}
+
+.show-posts:focus {
+  outline: none;
+}
+
+
+.modal .actions {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.comment-container::-webkit-scrollbar {
+  width: 8px; /* רוחב פס הגלילה */
+}
+
+.comment-container::-webkit-scrollbar-track {
+  background:#c01531c4; /* צבע הרקע של פס הגלילה */
+  border-radius: 5px;
+}

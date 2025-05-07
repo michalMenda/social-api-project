@@ -1,0 +1,81 @@
+.add-item-button {
+    padding: 10px 15px;
+    background-color: #c01532;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    /* position: absolute; */
+}
+
+.add-item-button:hover {
+    background-color: #a0122b;
+}
+
+.add-item-container {
+    display: flex;
+    /* align-items: center; */
+    flex-direction: column;
+    justify-content: center;
+    gap: 15px;
+    padding: 10px;
+    margin: 20px auto;
+    max-width: 700px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: rgba(248, 248, 248, 0.75);
+    border-radius: 8px;
+    border: 4px solid #e0e0e0;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease; 
+}
+
+.form-field {
+    margin-bottom: 15px;
+}
+
+.form-label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.form-input {
+    width: 90%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.send-button,
+.cancel-button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.send-button {
+    background-color: #c01532;
+    color: white;
+}
+
+.send-button:hover {
+    background-color: #c01532;
+}
+
+.cancel-button {
+    background-color: #c01532;
+    color: white;
+}
+
+.cancel-button:hover {
+    background-color: #c01532;
+}

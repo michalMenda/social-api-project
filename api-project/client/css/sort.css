@@ -1,0 +1,52 @@
+.sort-container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    gap: 15px;
+    padding: 10px;
+    margin: 3vh auto 3vh auto;
+    max-width: 700px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: rgba(248, 248, 248, 0.75);
+    border-radius: 8px;
+    border: 4px solid #e0e0e0;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease; 
+}
+
+.sort-container h2 {
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+    color: #333;
+}
+
+#dropdown {
+    padding: 8px 12px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    cursor: pointer;
+    transition: border-color 0.3s;
+}
+
+#dropdown:focus {
+    outline: none;
+    border-color: #007BFF;
+}
+
+.sort-container select {
+    width: 100%;
+    max-width: 200px;
+}
+
+.sort-container div {
+    margin-bottom: 10px;
+}
+
+.sort-container select option {
+    padding: 10px;
+    font-size: 1rem;
+}

@@ -1,0 +1,90 @@
+#root {
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f9f9f9;
+  background-image: url('../assets/petals-near-bright-gerberas.jpg');
+  background-attachment: fixed;
+  background-size: cover;
+  min-height: 100vh;
+  color: #370810;
+}
+
+#blah {
+  position: fixed;
+}
+
+nav a:hover {
+  background-color: #ffffff22;
+  color: rgba(255, 255, 255, 0.58);
+}
+
+#root {
+  padding-top: 80px;
+} 
+
+ .nav-container {
+  position: fixed;
+  top: 5.5vh;
+  left: 0;
+  right: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #ffffff67;
+  z-index: 99;
+}
+
+.left-nav {
+  display: flex;
+  align-items: center;
+  margin-left: 30px;
+}
+
+.center-nav {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.right-nav {
+  display: flex;
+  align-items: center;
+  margin-right: 4vw;
+  gap: 20px;
+}
+
+.center-nav a,
+.right-nav a,
+.left-nav a {
+  color: rgba(93, 92, 92, 0.45);
+  font-size: 1.8rem;
+  text-decoration: none;
+  font-weight: bolder;
+  transition: background-color 0.3s ease;
+}
+
+.center-nav a:hover,
+.right-nav a:hover,
+.left-nav a:hover {
+  color: rgb(141, 80, 80);
+}
+
+.separator {
+  height: 20px;
+  width: 1px;
+  background-color: rgba(93, 92, 92, 0.45);
+  display: inline-block;
+}
+
