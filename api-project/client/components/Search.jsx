@@ -21,7 +21,7 @@ function Search({ type, searchItems, setItems, items, displayChanged, setDisplay
         }
 
         if (displayChanged) {
-            const fetchedItems = await fetchData(type,"userId", id,handleError);
+            const fetchedItems = await fetchData(type,"user_id", id,handleError);
             setAllItems(fetchedItems);
             setDisplayChanged(false);
         }

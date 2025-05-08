@@ -18,8 +18,8 @@ function Posts({ id }) {
   const navigate = useNavigate();
   const postAttributes = ["title", "body"];
 
-  const fetchPosts = async (userId = id) => {
-    const fetchedPosts = await fetchData("posts", "userId", userId, handleError);
+  const fetchPosts = async (user_id = id) => {
+    const fetchedPosts = await fetchData("posts", "user_id", user_id, handleError);
     setPosts(fetchedPosts);
   };
 
@@ -28,9 +28,9 @@ function Posts({ id }) {
   }, [id]);
 
   const togglePosts = async () => {
-    const userId = showPosts ? id : "";
+    const user_id = showPosts ? id : "";
     navigate(`/users/${id}/posts`);
-    await fetchPosts(userId);
+    await fetchPosts(user_id);
     setShowPosts(!showPosts);
   };
 
@@ -54,7 +54,7 @@ function Posts({ id }) {
           type="posts"
           addDisplay={addPosts}
           setDisplayChanged={setDisplayChanged}
-          defaltValues={{ userId: id }}
+          defaltValues={{ user_id: id }}
         />
         {posts && posts.map((post) => <Post key={post.id} post={post} />)}
       </div>

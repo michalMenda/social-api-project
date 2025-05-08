@@ -57,7 +57,7 @@ function Post({ post }) {
                     <p>{post.title}</p>
                     <div className="actions">
                         <div className="right-actions">
-                            {post.userId == userData.id && (
+                            {post.user_id == userData.id && (
                                 <>
                                     <Update
                                         item={{ id: post.id, title: post.title, body: post.body }}

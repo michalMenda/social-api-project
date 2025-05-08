@@ -25,8 +25,8 @@ async function getUserWithPassword(email) {
         JOIN passwords ON users.id = passwords.user_id
         WHERE users.email = ?
     `;
-    const rows = await pool.query(sql, [email]);
-    return rows;
+    const [rows] = await pool.query(sql, [email]);
+    return rows[0];
 }
 
 
@@ -43,7 +43,7 @@ async function create(table, data) {
         data.is_active = true;
     }
     const [result] = await pool.query('INSERT INTO ?? SET ?', [table, data]);
-    return result.insertId;
+    return result.insertId
 }
 
 // Update an existing row

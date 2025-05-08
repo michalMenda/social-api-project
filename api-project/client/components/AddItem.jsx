@@ -9,8 +9,11 @@ function AddItem({ keys, type, addDisplay, defaltValues, setDisplayChanged = () 
         setItem((prevItem) => ({ ...prevItem, [key]: value }));
     };
 
-    const isFormValid = Object.values(item).some((value) => value && value.trim() !== "");
-
+    // const isFormValid = Object.values(item).some((value) => value && value.trim() !== "");
+    const isFormValid = Object.values(item).some(
+        (value) => typeof value === "string" && value.trim() !== ""
+      );
+      
     const addNewItem = async () => {
         if (!isFormValid) {
             alert("Please fill in at least one field before saving.");

@@ -16,7 +16,7 @@ function Todos({ id }) {
    
     useEffect(() => {
         const fetchTodos = async () => {
-            setTodos(await fetchData('todos',"userId", id,handleError));
+            setTodos(await fetchData('todos',"user_id", id,handleError));
         };
         fetchTodos();
     }, [id]);
@@ -56,7 +56,7 @@ function Todos({ id }) {
                         ))}
                     </select>
                 </div>
-                <AddItem key="todos" keys={todoAttributes} type="todos" addDisplay={addTodo} defaltValues={{ userId: id, completed: false }} />
+                <AddItem key="todos" keys={todoAttributes} type="todos" addDisplay={addTodo} defaltValues={{ user_id: id, completed: false }} />
                 {todos && todos.map((todo) => <Todo key={todo.id} todo={todo} />)}
             </div>
         </DisplayContext.Provider>

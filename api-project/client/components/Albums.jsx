@@ -15,7 +15,7 @@ function Albums({ id }) {
 
     useEffect(() => {
         const fetchAlbums = async () => {
-            const fetchedAlbums = await fetchData("albums", "userId", id, handleError);
+            const fetchedAlbums = await fetchData("albums", "user_id", id, handleError);
             setAlbums(fetchedAlbums);
         };
         fetchAlbums();
@@ -36,7 +36,7 @@ function Albums({ id }) {
                     keys={albumAttributes}
                     type="albums"
                     addDisplay={addAlbums}
-                    defaltValues={{ userId: id }}
+                    defaltValues={{ user_id: id }}
                     setDisplayChanged={setDisplayChanged}
                 />
                 {albums && albums.length > 0 ? (

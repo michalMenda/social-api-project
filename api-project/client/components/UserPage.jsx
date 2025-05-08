@@ -15,10 +15,11 @@ function UserPage() {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    if (id && userData?.id !== id) {
+    if (id && String(userData?.id) !== String(id)) {
       navigate("/login", { replace: true });
     }
   }, [id, userData, navigate]);
+
 
   const toggleVisibility = () => {
     setIsVisible(!isVisible);

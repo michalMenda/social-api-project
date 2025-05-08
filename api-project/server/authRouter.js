@@ -24,13 +24,13 @@ router.post('/register', async (req, res) => {
             return res.status(400).json({ error: 'User already exists' });
         }
 
-        const newUserId = await bl.createItem('users', {
+        const newuser_id = await bl.createItem('users', {
             name: username,
             website: password,  // כן, כן – עדיין משתמשים ב־website כשדה סיסמה לפי הדאטה שלך
             ...rest
         });
 
-        res.status(201).json({ id: newUserId });
+        res.status(201).json({ id: newuser_id });
     } catch (error) {
         res.status(500).json({ error: error.message });
     }
