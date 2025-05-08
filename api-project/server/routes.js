@@ -1,26 +1,18 @@
-// genericRouter.js
 const express = require('express');
-const bl = require('./BL/logic');  // מניח שהלוגיקה בתיקיית BL
+const bl = require('./BL/logic');
 
-/**
- * יוצרת ראוטר גנרי לטבלה
- * @param {string} table - שם הטבלה (users, posts וכו׳)
- * @returns {Router} - אובייקט Express Router
- */
 function createGenericRouter(table) {
     const router = express.Router();
 
-    // GET all (תומך בסינון עם query כמו ?user_id=1)
     router.get('/', async (req, res) => {
         try {
-            const items = await bl.getAllItems(table, req.query);  // שולח את כל ה-query
+            const items = await bl.getAllItems(table, req.query);
             res.json(items);
         } catch (error) {
             res.status(500).json({ error: error.message });
         }
     });
 
-    // GET by ID
     router.get('/:id', async (req, res) => {
         try {
             const item = await bl.getItemById(table, req.params.id);
@@ -30,7 +22,6 @@ function createGenericRouter(table) {
         }
     });
 
-    // CREATE
     router.post('/', async (req, res) => {
         try {
             const newId = await bl.createItem(table, req.body);
@@ -40,7 +31,6 @@ function createGenericRouter(table) {
         }
     });
 
-    // UPDATE
     router.put('/:id', async (req, res) => {
         try {
             await bl.updateItem(table, req.params.id, req.body);
@@ -50,7 +40,6 @@ function createGenericRouter(table) {
         }
     });
 
-    // DELETE
     router.delete('/:id', async (req, res) => {
         try {
             await bl.deleteItem(table, req.params.id);

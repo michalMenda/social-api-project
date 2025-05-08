@@ -30,7 +30,7 @@ function Signup() {
       return;
     }
 
-    const response = await fetch(`http://localhost:3000/users/?username=${username}`);
+    const response = await fetch(`http://localhost:3000/users/?name=${username}`);
     if (response.ok) {
       const users = await response.json();
       if (users.length === 0) {
@@ -162,51 +162,10 @@ function Signup() {
           />
           {secondFormErrors.email && <span className="error-message">{secondFormErrors.email.message}</span>}
 
-          <label>Address:</label>
-          <input
-            type="text"
-            name="city"
-            placeholder="City"
-            className="login-input"
-            {...registerSecondForm("city", { required: "City is required" })}
-          />
-          {secondFormErrors.city && <span className="error-message">{secondFormErrors.city.message}</span>}
-
           <input type="text" name="suite" placeholder="Suite" className="login-input" {...registerSecondForm("suite")} />
 
-          <input
-            type="text"
-            name="street"
-            placeholder="Street"
-            className="login-input"
-            {...registerSecondForm("street", { required: "Street is required" })}
-          />
+       
           {secondFormErrors.street && <span className="error-message">{secondFormErrors.street.message}</span>}
-
-          <input
-            type="text"
-            name="zipcode"
-            placeholder="Zipcode"
-            className="login-input"
-            {...registerSecondForm("zipcode", {
-              required: "Zipcode is required",
-              pattern: { value: /^[0-9\-]+$/, message: "Invalid zipcode" },
-            })}
-          />
-          {secondFormErrors.zipcode && <span className="error-message">{secondFormErrors.zipcode.message}</span>}
-
-          <label>Geo:</label>
-          <input
-            type="text"
-            name="latitude"
-            placeholder="Latitude"
-            className="login-input"
-            {...registerSecondForm("latitude", {
-              required: "Latitude is required",
-              pattern: { value: /^-?([0-8]?[0-9]|90)(\.[0-9]+)?$/, message: "Invalid latitude (-90 to 90)" },
-            })}
-          />
-          {secondFormErrors.latitude && <span className="error-message">{secondFormErrors.latitude.message}</span>}
 
           <input
             type="text"

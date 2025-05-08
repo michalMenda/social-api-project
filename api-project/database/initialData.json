@@ -6,7 +6,7 @@
       "email": "Sincere@april.biz",
       "address": "Kulas Light, Gwenborough",
       "phone": "1-770-736-8031",
-      "isActive": true
+      "is_active": true
     },
     {
       "id": 2,
@@ -14,7 +14,7 @@
       "email": "Shanna@melissa.tv",
       "address": "Victor Plains, Wisokyburgh",
       "phone": "010-692-6593",
-      "isActive": true
+      "is_active": true
     },
     {
       "id": 3,
@@ -22,7 +22,7 @@
       "email": "Nathan@yesenia.net",
       "address": "Douglas Extension, McKenziehaven",
       "phone": "1-463-123-4447",
-      "isActive": true
+      "is_active": true
     },
     {
       "id": 4,
@@ -30,7 +30,7 @@
       "email": "Julianne.OConner@kory.org",
       "address": "Hoeger Mall, South Elvis",
       "phone": "493-170-9623",
-      "isActive": true
+      "is_active": true
     },
     {
       "id": 5,
@@ -38,7 +38,7 @@
       "email": "Lucio_Hettinger@annie.ca",
       "address": "Skiles Walks, Roscoeview",
       "phone": "(254)954-1289",
-      "isActive": true
+      "is_active": true
     },
     {
       "id": 6,
@@ -46,7 +46,7 @@
       "email": "Karley_Dach@jasper.info",
       "address": "Norberto Crossing, South Christy",
       "phone": "1-477-935-8478",
-      "isActive": true
+      "is_active": true
     },
     {
       "id": 7,
@@ -54,7 +54,7 @@
       "email": "Telly.Hoeger@billy.biz",
       "address": "Rex Trail, Howemouth",
       "phone": "210.067.6132",
-      "isActive": true
+      "is_active": true
     },
     {
       "id": 8,
@@ -62,7 +62,7 @@
       "email": "Sherwood@rosamond.me",
       "address": "Ellsworth Summit, Aliyaview",
       "phone": "586.493.6943",
-      "isActive": true
+      "is_active": true
     },
     {
       "id": 9,
@@ -70,7 +70,7 @@
       "email": "Chaim_McDermott@dana.io",
       "address": "Dayna Park, Bartholomebury",
       "phone": "(775)976-6794",
-      "isActive": true
+      "is_active": true
     },
     {
       "id": 10,
@@ -78,7 +78,7 @@
       "email": "Rey.Padberg@karina.biz",
       "address": "Kattie Turnpike, Lebsackbury",
       "phone": "024-648-3804",
-      "isActive": true
+      "is_active": true
     },
     {
       "id": 11,
@@ -86,7 +86,7 @@
       "email": "john@example.com",
       "address": "123 New St, Newtown",
       "phone": "555-555-5555",
-      "isActive": true
+      "is_active": true
     },
     {
       "id": 12,
@@ -94,7 +94,7 @@
       "email": "jane@example.com",
       "address": "456 Old Rd, Oldtown",
       "phone": "444-444-4444",
-      "isActive": true
+      "is_active": true
     },
     {
       "id": 13,
@@ -102,7 +102,7 @@
       "email": "tom@example.com",
       "address": "789 High St, Hightown",
       "phone": "333-333-3333",
-      "isActive": true
+      "is_active": true
     },
     {
       "id": 14,
@@ -110,7 +110,7 @@
       "email": "lucy@example.com",
       "address": "101 Low Ave, Lowtown",
       "phone": "222-222-2222",
-      "isActive": true
+      "is_active": true
     },
     {
       "id": 15,
@@ -118,7 +118,7 @@
       "email": "mark@example.com",
       "address": "202 Mid Blvd, Midtown",
       "phone": "111-111-1111",
-      "isActive": true
+      "is_active": true
     }
   ],
   "todos": [
@@ -126,121 +126,121 @@
       "id": 1,
       "user_id": 1,
       "title": "Todo 1 for user 1",
-      "isActive": true
+      "is_active": true
     },
     {
       "id": 2,
       "user_id": 1,
       "title": "Todo 2 for user 1",
-      "isActive": true
+      "is_active": true
     },
     {
       "id": 3,
       "user_id": 1,
       "title": "Todo 3 for user 1",
-      "isActive": true
+      "is_active": true
     },
     {
       "id": 4,
       "user_id": 1,
       "title": "Todo 4 for user 1",
-      "isActive": true
+      "is_active": true
     },
     {
       "id": 5,
       "user_id": 1,
       "title": "Todo 5 for user 1",
-      "isActive": true
+      "is_active": true
     },
     {
       "id": 6,
       "user_id": 1,
       "title": "Todo 6 for user 1",
-      "isActive": true
+      "is_active": true
     },
     {
       "id": 7,
       "user_id": 1,
       "title": "Todo 7 for user 1",
-      "isActive": true
+      "is_active": true
     },
     {
       "id": 8,
       "user_id": 1,
       "title": "Todo 8 for user 1",
-      "isActive": true
+      "is_active": true
     },
     {
       "id": 9,
       "user_id": 1,
       "title": "Todo 9 for user 1",
-      "isActive": true
+      "is_active": true
     },
     {
       "id": 10,
       "user_id": 1,
       "title": "Todo 10 for user 1",
-      "isActive": true
+      "is_active": true
     },
     {
       "id": 11,
       "user_id": 2,
       "title": "Todo 1 for user 2",
-      "isActive": true
+      "is_active": true
     },
     {
       "id": 12,
       "user_id": 2,
       "title": "Todo 2 for user 2",
-      "isActive": true
+      "is_active": true
     },
     {
       "id": 13,
       "user_id": 2,
       "title": "Todo 3 for user 2",
-      "isActive": true
+      "is_active": true
     },
     {
       "id": 14,
       "user_id": 2,
       "title": "Todo 4 for user 2",
-      "isActive": true
+      "is_active": true
     },
     {
       "id": 15,
       "user_id": 2,
       "title": "Todo 5 for user 2",
-      "isActive": true
+      "is_active": true
     },
     {
       "id": 16,
       "user_id": 2,
       "title": "Todo 6 for user 2",
-      "isActive": true
+      "is_active": true
     },
     {
       "id": 17,
       "user_id": 2,
       "title": "Todo 7 for user 2",
-      "isActive": true
+      "is_active": true
     },
     {
       "id": 18,
       "user_id": 2,
       "title": "Todo 8 for user 2",
-      "isActive": true
+      "is_active": true
     },
     {
       "id": 19,
       "user_id": 2,
       "title": "Todo 9 for user 2",
-      "isActive": true
+      "is_active": true
     },
     {
       "id": 20,
       "user_id": 2,
       "title": "Todo 10 for user 2",
-      "isActive": true
+      "is_active": true
     }
   ],
   "posts": [
@@ -249,35 +249,35 @@
       "user_id": 1,
       "title": "Post 1 for user 1",
       "body": "Body of post 1 for user 1",
-      "isActive": true
+      "is_active": true
     },
     {
       "id": 2,
       "user_id": 1,
       "title": "Post 2 for user 1",
       "body": "Body of post 2 for user 1",
-      "isActive": true
+      "is_active": true
     },
     {
       "id": 3,
       "user_id": 1,
       "title": "Post 3 for user 1",
       "body": "Body of post 3 for user 1",
-      "isActive": true
+      "is_active": true
     },
     {
       "id": 4,
       "user_id": 1,
       "title": "Post 4 for user 1",
       "body": "Body of post 4 for user 1",
-      "isActive": true
+      "is_active": true
     },
     {
       "id": 5,
       "user_id": 1,
       "title": "Post 5 for user 1",
       "body": "Body of post 5 for user 1",
-      "isActive": true
+      "is_active": true
     }
   ],
   "comments": [
@@ -285,102 +285,102 @@
       "id": 1,
       "post_id": 1,
       "body": "Comment 1 for post 1",
-      "isActive": true
+      "is_active": true
     },
     {
       "id": 2,
       "post_id": 1,
       "body": "Comment 2 for post 1",
-      "isActive": true
+      "is_active": true
     },
     {
       "id": 3,
       "post_id": 2,
       "body": "Comment 1 for post 2",
-      "isActive": true
+      "is_active": true
     },
     {
       "id": 4,
       "post_id": 2,
       "body": "Comment 2 for post 2",
-      "isActive": true
+      "is_active": true
     }
   ],
   "passwords": [
     {
       "user_id": 1,
       "password": "password1",
-      "isActive": true
+      "is_active": true
     },
     {
       "user_id": 2,
       "password": "password2",
-      "isActive": true
+      "is_active": true
     },
     {
       "user_id": 3,
       "password": "password3",
-      "isActive": true
+      "is_active": true
     },
     {
       "user_id": 4,
       "password": "password4",
-      "isActive": true
+      "is_active": true
     },
     {
       "user_id": 5,
       "password": "password5",
-      "isActive": true
+      "is_active": true
     },
     {
       "user_id": 6,
       "password": "password6",
-      "isActive": true
+      "is_active": true
     },
     {
       "user_id": 7,
       "password": "password7",
-      "isActive": true
+      "is_active": true
     },
     {
       "user_id": 8,
       "password": "password8",
-      "isActive": true
+      "is_active": true
     },
     {
       "user_id": 9,
       "password": "password9",
-      "isActive": true
+      "is_active": true
     },
     {
       "user_id": 10,
       "password": "password10",
-      "isActive": true
+      "is_active": true
     },
     {
       "user_id": 11,
       "password": "password11",
-      "isActive": true
+      "is_active": true
     },
     {
       "user_id": 12,
       "password": "password12",
-      "isActive": true
+      "is_active": true
     },
     {
       "user_id": 13,
       "password": "password13",
-      "isActive": true
+      "is_active": true
     },
     {
       "user_id": 14,
       "password": "password14",
-      "isActive": true
+      "is_active": true
     },
     {
       "user_id": 15,
       "password": "password15",
-      "isActive": true
+      "is_active": true
     }
   ]
 }

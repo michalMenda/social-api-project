@@ -1,54 +1,63 @@
-import React, { useState,useContext} from "react";
-import { useNavigate } from "react-router-dom";  
-import '../css/login.css'
+import React, { useState, useContext } from "react";
+import { useNavigate } from "react-router-dom";
+import '../css/login.css';
 import { userContext } from "./App";
+
 function Login() {
-    const [username, setUsername] = useState('');
+    const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const navigate = useNavigate();
-    const {setUserData}= useContext(userContext);
+    const { setUserData } = useContext(userContext);
+
     async function checkIFUserExists() {
-        let response = await fetch(`http://localhost:3000/users/?username=${username}`);
-        const user = await response.json();
-        if (response.ok &&user[0]) {
-            if (user.length > 0 && user[0].website === password) {
-                const { website, ...userWithoutPassword } = user[0];
-                setUserData(userWithoutPassword);
-                localStorage.setItem("currentUser", JSON.stringify(userWithoutPassword));
-                navigate(`/home`);
-            } else {
-                alert('Incorrect password');
-            }
+        const response = await fetch(`http://localhost:3000/login`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ email, password })
+        }
+    );
+    
+        if (response.ok) {
+            const user = await response.json();
+            setUserData(user);
+            localStorage.setItem("currentUser", JSON.stringify(user));
+            navigate(`/home`);
         } else {
-            alert('User doesn’t exist');
+            try {
+                const error = await response.json();
+                alert(error.error || 'Login failed');
+            } catch {
+                alert('Login failed');
+            }
         }
     }
-
-    const handleUsernameChange = (e) => {
-        setUsername(e.target.value);
-    };
+    
 
     return (
         <div>
-        <div className="login-container">
-            <input
-                name="username"
-                placeholder="Username"
-                className="login-input"
-                onChange={handleUsernameChange} 
-            />
-            <input
-                name="password"
-                type="password"
-                placeholder="Password"
-                className="login-input"
-                onChange={(e) => setPassword(e.target.value)}
-            />
-            <button className="login-button" onClick={checkIFUserExists}>
-                Login
+            <div className="login-container">
+                <input
+                    name="email"
+                    placeholder="email"
+                    className="login-input"
+                    onChange={(e) => setEmail(e.target.value)}
+                />
+                <input
+                    name="password"
+                    type="password"
+                    placeholder="Password"
+                    className="login-input"
+                    onChange={(e) => setPassword(e.target.value)}
+                />
+                <button className="login-button" onClick={checkIFUserExists}>
+                    Login
+                </button>
+            </div>
+            <button className="switch-signup" onClick={() => navigate('/register')}>
+                don't have an account yet?
             </button>
-        </div>
-        <button className="switch-signup" onClick={()=>navigate('/register')}>don't have an account yet?</button>
         </div>
     );
 }

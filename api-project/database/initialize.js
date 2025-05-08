@@ -4,25 +4,25 @@ const fs      = require('fs');
 const path    = require('path');
 const bcrypt  = require('bcrypt');
 
-async function ensureIsActive(table) {
+async function ensureis_active(table) {
   // 1. בדיקה אם העמודה כבר קיימת
   const [rows] = await mysql.query(
     `SELECT COUNT(*) AS cnt
      FROM information_schema.COLUMNS
      WHERE TABLE_SCHEMA = DATABASE()
        AND TABLE_NAME = ?
-       AND COLUMN_NAME = 'isActive'`,
+       AND COLUMN_NAME = 'is_active'`,
     [table]
   );
   if (rows[0].cnt === 0) {
     // 2. אם לא קיימת – מוסיפים
     await mysql.query(
       `ALTER TABLE \`${table}\`
-       ADD COLUMN isActive BOOLEAN DEFAULT TRUE`
+       ADD COLUMN is_active BOOLEAN DEFAULT TRUE`
     );
-    console.log(`🆕 Added isActive to ${table}`);
+    console.log(`🆕 Added is_active to ${table}`);
   } else {
-    console.log(`✅ ${table}.isActive already exists`);
+    console.log(`✅ ${table}.is_active already exists`);
   }
 }
 
@@ -30,7 +30,7 @@ async function initializeDatabase() {
   try {
     console.log('🔧 Creating tables (if not exists)…');
 
-    // 1. יצירת הטבלאות (עם isActive – נוסף מעכשיו)
+    // 1. יצירת הטבלאות (עם is_active – נוסף מעכשיו)
     await mysql.execute(`
       CREATE TABLE IF NOT EXISTS users (
         id INT PRIMARY KEY,
@@ -38,8 +38,7 @@ async function initializeDatabase() {
         email VARCHAR(255),
         address VARCHAR(255),
         phone VARCHAR(50),
-        password_hash VARCHAR(255),
-        isActive BOOLEAN DEFAULT TRUE
+        is_active BOOLEAN DEFAULT TRUE
       )
     `);
     await mysql.execute(`
@@ -47,7 +46,7 @@ async function initializeDatabase() {
         id INT PRIMARY KEY,
         user_id INT,
         title VARCHAR(255),
-        isActive BOOLEAN DEFAULT TRUE,
+        is_active BOOLEAN DEFAULT TRUE,
         FOREIGN KEY (user_id) REFERENCES users(id)
       )
     `);
@@ -57,7 +56,7 @@ async function initializeDatabase() {
         user_id INT,
         title VARCHAR(255),
         body TEXT,
-        isActive BOOLEAN DEFAULT TRUE,
+        is_active BOOLEAN DEFAULT TRUE,
         FOREIGN KEY (user_id) REFERENCES users(id)
       )
     `);
@@ -66,7 +65,7 @@ async function initializeDatabase() {
         id INT PRIMARY KEY,
         post_id INT,
         body TEXT,
-        isActive BOOLEAN DEFAULT TRUE,
+        is_active BOOLEAN DEFAULT TRUE,
         FOREIGN KEY (post_id) REFERENCES posts(id)
       )
     `);
@@ -78,10 +77,10 @@ async function initializeDatabase() {
       )
     `);
 
-    console.log('🔧 Ensuring isActive column exists…');
-    // 2. הוספת isActive לכל טבלה אם חסרה
+    console.log('🔧 Ensuring is_active column exists…');
+    // 2. הוספת is_active לכל טבלה אם חסרה
     for (const tbl of ['users', 'todos', 'posts', 'comments', 'passwords']) {
-      await ensureIsActive(tbl);
+      await ensureis_active(tbl);
     }
 
     console.log('🔧 Dropping old triggers…');
@@ -96,8 +95,8 @@ async function initializeDatabase() {
       AFTER UPDATE ON users
       FOR EACH ROW
       BEGIN
-        IF OLD.isActive != NEW.isActive AND NEW.isActive = FALSE THEN
-          UPDATE todos SET isActive = FALSE WHERE user_id = NEW.id;
+        IF OLD.is_active != NEW.is_active AND NEW.is_active = FALSE THEN
+          UPDATE todos SET is_active = FALSE WHERE user_id = NEW.id;
         END IF;
       END
     `);
@@ -107,8 +106,8 @@ async function initializeDatabase() {
       AFTER UPDATE ON posts
       FOR EACH ROW
       BEGIN
-        IF OLD.isActive != NEW.isActive AND NEW.isActive = FALSE THEN
-          UPDATE comments SET isActive = FALSE WHERE post_id = NEW.id;
+        IF OLD.is_active != NEW.is_active AND NEW.is_active = FALSE THEN
+          UPDATE comments SET is_active = FALSE WHERE post_id = NEW.id;
         END IF;
       END
     `);
@@ -120,18 +119,17 @@ async function initializeDatabase() {
 
     // משתמשים
     for (const u of jsonData.users) {
-      const hash = await bcrypt.hash(u.password || '', 10);
       await mysql.execute(
-        `INSERT INTO users (id, name, email, address, phone, password_hash, isActive)
-         VALUES (?, ?, ?, ?, ?, ?, ?)
+        `INSERT INTO users (id, name, email, address, phone, is_active)
+         VALUES (?, ?, ?, ?, ?, ?)
          ON DUPLICATE KEY UPDATE id = id`,
-        [u.id, u.name, u.email, u.address, u.phone, hash, true]
+        [u.id, u.name, u.email, u.address, u.phone, true]
       );
     }
     // todos
     for (const t of jsonData.todos) {
       await mysql.execute(
-        `INSERT INTO todos (id, user_id, title, isActive)
+        `INSERT INTO todos (id, user_id, title, is_active)
          VALUES (?, ?, ?, ?)
          ON DUPLICATE KEY UPDATE id = id`,
         [t.id, t.user_id, t.title, true]
@@ -140,7 +138,7 @@ async function initializeDatabase() {
     // posts
     for (const p of jsonData.posts) {
       await mysql.execute(
-        `INSERT INTO posts (id, user_id, title, body, isActive)
+        `INSERT INTO posts (id, user_id, title, body, is_active)
          VALUES (?, ?, ?, ?, ?)
          ON DUPLICATE KEY UPDATE id = id`,
         [p.id, p.user_id, p.title, p.body, true]
@@ -149,7 +147,7 @@ async function initializeDatabase() {
     // comments
     for (const c of jsonData.comments) {
       await mysql.execute(
-        `INSERT INTO comments (id, post_id, body, isActive)
+        `INSERT INTO comments (id, post_id, body, is_active)
          VALUES (?, ?, ?, ?)
          ON DUPLICATE KEY UPDATE id = id`,
         [c.id, c.post_id, c.body, true]

@@ -1,4 +1,6 @@
 const dal = require('../DAL/dal');
+const bcrypt = require('bcrypt');
+
 
 // יצירת רשומה
 async function createItem(table, data) {
@@ -28,11 +30,39 @@ async function updateItem(table, id, data) {
 async function deleteItem(table, id) {
     return dal.remove(table, id);
 }
+//כניסת משתמש
+
+async function loginUser(email, password) {
+    console.log('email:', email);
+    console.log('Password:', password);
+
+    // מביאים את המשתמש עם ההאש של הסיסמה (JOIN)
+    const user = await dal.getUserWithPassword(email);
+
+    if (!user) {
+        throw new Error('User not found');
+    }
+
+    console.log('Hash from DB:', user.password_hash);
+
+    // השוואת סיסמה עם ההאש
+    const isMatch = await bcrypt.compare(password, user.password_hash);
+    if (!isMatch) {
+        throw new Error('Incorrect password');
+    }
+
+    // מחזירים את המשתמש בלי שדה הסיסמה
+    const { password_hash, ...userWithoutPassword } = user;
+    return userWithoutPassword;
+}
+
+
 
 module.exports = {
     createItem,
     getAllItems,
     getItemById,
     updateItem,
-    deleteItem
+    deleteItem,
+    loginUser 
 };
