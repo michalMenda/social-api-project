@@ -1,8 +1,8 @@
 // database/initialize.js
-const mysql   = require('../server/config/connection');
-const fs      = require('fs');
-const path    = require('path');
-const bcrypt  = require('bcrypt');
+const mysql = require('../server/config/connection');
+const fs = require('fs');
+const path = require('path');
+const bcrypt = require('bcrypt');
 
 async function ensureis_active(table) {
   // 1. בדיקה אם העמודה כבר קיימת
@@ -33,7 +33,7 @@ async function initializeDatabase() {
     // 1. יצירת הטבלאות (עם is_active – נוסף מעכשיו)
     await mysql.execute(`
       CREATE TABLE IF NOT EXISTS users (
-        id INT PRIMARY KEY,
+        id INT PRIMARY KEY AUTO_INCREMENT,
         name VARCHAR(255),
         email VARCHAR(255),
         address VARCHAR(255),
@@ -43,16 +43,17 @@ async function initializeDatabase() {
     `);
     await mysql.execute(`
       CREATE TABLE IF NOT EXISTS todos (
-        id INT PRIMARY KEY,
+        id INT PRIMARY KEY AUTO_INCREMENT,
         user_id INT,
         title VARCHAR(255),
         is_active BOOLEAN DEFAULT TRUE,
+         completed BOOLEAN DEFAULT FALSE,
         FOREIGN KEY (user_id) REFERENCES users(id)
       )
     `);
     await mysql.execute(`
       CREATE TABLE IF NOT EXISTS posts (
-        id INT PRIMARY KEY,
+        id INT PRIMARY KEY AUTO_INCREMENT,
         user_id INT,
         title VARCHAR(255),
         body TEXT,
@@ -62,7 +63,7 @@ async function initializeDatabase() {
     `);
     await mysql.execute(`
       CREATE TABLE IF NOT EXISTS comments (
-        id INT PRIMARY KEY,
+        id INT PRIMARY KEY AUTO_INCREMENT,
         post_id INT,
         body TEXT,
         is_active BOOLEAN DEFAULT TRUE,

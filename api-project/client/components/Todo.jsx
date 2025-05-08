@@ -9,7 +9,7 @@ function Todo({ todo }) {
     const [checked, setChecked] = useState(todo.completed);
     const { updateTodo, deleteTodo, setDisplayChanged } = useContext(DisplayContext);
     const [error, setError] = useState(null);
-const {handleError}=useHandleError();
+    const { handleError } = useHandleError();
     const handleCheckboxChange = async () => {
         const newCheckedState = !checked;
         setChecked(newCheckedState); // Optimistic UI update
@@ -17,11 +17,14 @@ const {handleError}=useHandleError();
 
         try {
             const response = await fetch(`http://localhost:3000/todos/${todo.id}`, {
-                method: "PATCH",
+                method: "PUT",
                 headers: {
                     "Content-Type": "application/json",
                 },
                 body: JSON.stringify({
+                    title: todo.title,
+                    user_id: todo.user_id,
+                    is_active: todo.is_active,
                     completed: newCheckedState,
                 }),
             });
@@ -31,7 +34,7 @@ const {handleError}=useHandleError();
             }
         } catch (err) {
             setChecked(!newCheckedState); // Revert state if API call fails
-            handleError("getError",err);
+            handleError("getError", err);
         }
     };
 
