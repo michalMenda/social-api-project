@@ -35,27 +35,31 @@ async function deleteItem(table, id) {
 async function loginUser(email, password) {
     console.log('email:', email);
     console.log('Password:', password);
-
-    // מביאים את המשתמש עם ההאש של הסיסמה (JOIN)
     const user = await dal.getUserWithPassword(email);
-
     if (!user) {
         throw new Error('User not found');
     }
-
     console.log('Hash from DB:', user.password_hash);
-
-    // השוואת סיסמה עם ההאש
     const isMatch = await bcrypt.compare(password, user.password_hash);
     if (!isMatch) {
         throw new Error('Incorrect password');
     }
 
-    // מחזירים את המשתמש בלי שדה הסיסמה
     const { password_hash, ...userWithoutPassword } = user;
     return userWithoutPassword;
 }
 
+async function registerUser(userData) {
+    const { password, ...userFields } = userData;
+
+    // האש של הסיסמה
+    const password_hash = await bcrypt.hash(password, 10);
+
+    // שליחה ל־DAL
+    const user_id = await dal.createUserWithPasswordHash(userFields, password_hash);
+
+    return { id: user_id, ...userFields };
+}
 
 
 module.exports = {
@@ -64,5 +68,6 @@ module.exports = {
     getItemById,
     updateItem,
     deleteItem,
-    loginUser 
+    loginUser,
+    registerUser,
 };

@@ -28,6 +28,33 @@ async function getUserWithPassword(email) {
     const [rows] = await pool.query(sql, [email]);
     return rows[0];
 }
+async function createUserWithPasswordHash(userData, password_hash) {
+    const connection = await pool.getConnection();
+    try {
+        await connection.beginTransaction();
+
+        // יצירת המשתמש
+        if (userData.is_active === undefined) {
+            userData.is_active = true;
+        }
+        const [userResult] = await connection.query('INSERT INTO users SET ?', userData);
+        const user_id = userResult.insertId;
+
+        // שמירת הסיסמה בטבלת passwords
+        await connection.query('INSERT INTO passwords SET ?', {
+            user_id,
+            password_hash
+        });
+
+        await connection.commit();
+        return user_id;
+    } catch (err) {
+        await connection.rollback();
+        throw err;
+    } finally {
+        connection.release();
+    }
+}
 
 
 
@@ -56,4 +83,4 @@ async function remove(table, id) {
     await pool.query('UPDATE ?? SET is_active = false WHERE id = ?', [table, id]);
 }
 
-module.exports = { getAll, getById, create, update, remove,getUserWithPassword };
+module.exports = { getAll, getById, create, update, remove,getUserWithPassword ,createUserWithPasswordHash };

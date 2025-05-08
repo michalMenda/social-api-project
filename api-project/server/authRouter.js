@@ -16,24 +16,21 @@ router.post('/login', async (req, res) => {
 // הרשמה
 router.post('/register', async (req, res) => {
     try {
-        const { username, password, ...rest } = req.body;
+        const { name, email, address, phone, password } = req.body;
 
-        // בדיקה אם המשתמש כבר קיים
-        const existing = await bl.getAllItems('users', { name: username });
+        const existing = await bl.getAllItems('users', { name });
         if (existing.length > 0) {
             return res.status(400).json({ error: 'User already exists' });
         }
 
-        const newuser_id = await bl.createItem('users', {
-            name: username,
-            website: password,  // כן, כן – עדיין משתמשים ב־website כשדה סיסמה לפי הדאטה שלך
-            ...rest
-        });
+        const createdUser = await bl.registerUser({ name, email, address, phone, password });
 
-        res.status(201).json({ id: newuser_id });
+        res.status(201).json(createdUser);
     } catch (error) {
         res.status(500).json({ error: error.message });
     }
 });
+
+
 
 module.exports = router;

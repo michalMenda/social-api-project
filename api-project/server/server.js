@@ -11,7 +11,9 @@ app.use('/users', createRouter('users'));
 app.use('/posts', createRouter('posts'));
 app.use('/comments', createRouter('comments'));
 app.use('/todos', createRouter('todos'));
-app.use('/', authRouter);                  
+app.use('/', authRouter); 
+app.use('/register', authRouter);                  
+
 
 const PORT = 3000;
 app.listen(PORT, () => {
