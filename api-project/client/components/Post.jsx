@@ -1,5 +1,5 @@
 import React, { useState, useContext, createContext, useEffect } from "react";
-import { useNavigate,useParams, useLocation } from "react-router-dom";
+import { useNavigate, useParams, useLocation } from "react-router-dom";
 import { fetchData } from "../js-files/GeneralRequests";
 import '../css/post.css';
 import { PostsContext } from "./Posts";
@@ -21,9 +21,9 @@ function Post({ post }) {
     const { userData } = useContext(userContext);
     const location = useLocation();
     const { handleError } = useHandleError();
-    
+
     const attributes = ["name", "body"];
-    
+
     function showPostFunction() {
         setShowPost(true);
         navigate(`/users/${id}/posts/${post.id}`);
