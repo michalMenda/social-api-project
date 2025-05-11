@@ -12,10 +12,9 @@ function Comment({ comment }) {
     return (
         <div className="comment-div">
             <p className="comment-email">{comment.email}</p>
-            <p className="comment-name">{comment.name}</p>
             <p className="comment-body">{comment.body}</p>
             {userData.email == comment.email && <div className="comment-actions">
-                <Update item={{ id: comment.id, name: comment.name, body: comment.body }} type="comments" updateDisplay={updateComments} />
+                <Update item={{ id: comment.id, body: comment.body }} type="comments" updateDisplay={updateComments} />
                 <Delete id={comment.id} type="comments" deleteDisplay={deleteComments} />
             </div>}
         </div>

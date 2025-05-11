@@ -22,7 +22,7 @@ function Post({ post }) {
     const location = useLocation();
     const { handleError } = useHandleError();
 
-    const attributes = ["name", "body"];
+    const attributes = [ "body"];
 
     function showPostFunction() {
         setShowPost(true);
@@ -36,7 +36,7 @@ function Post({ post }) {
                     setShowComments(true);
                 }
                 else {
-                    let response = await fetchData("comments", "postId", post.id, handleError);
+                    let response = await fetchData("comments", "post_id", post.id, handleError);
                     if (response) {
                         setComments(response);
                         setShowComments(true);
@@ -99,10 +99,14 @@ function Post({ post }) {
                             <div className="actions-btn">
                                 {!showComments && <button onClick={navigateToComments}>Show Comments</button>}
                                 <CommentContext.Provider value={{ updateComments, deleteComments }}>
-                                    <div> <AddItem keys={attributes} type="comments" addDisplay={addComments} defaltValues={{ email: userData.email, postId: post.id }} />{
-                                        showComments && <div className="comment-container">{comments.map((comment) => { return <Comment key={comment.id} comment={comment}></Comment> })}
-                                        </div>
-                                    }</div></CommentContext.Provider>
+                                    <div> <AddItem
+                                        keys={attributes}
+                                        type="comments"
+                                        addDisplay={addComments}
+                                        defaltValues={{ email: userData.email, post_id: post.id }} />{
+                                            showComments && <div className="comment-container">{comments.map((comment) => { return <Comment key={comment.id} comment={comment}></Comment> })}
+                                            </div>
+                                        }</div></CommentContext.Provider>
                             </div>
                         </div>
                     </div>

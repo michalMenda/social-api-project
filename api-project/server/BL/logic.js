@@ -51,11 +51,7 @@ async function loginUser(email, password) {
 
 async function registerUser(userData) {
     const { password, ...userFields } = userData;
-
-    // האש של הסיסמה
     const password_hash = await bcrypt.hash(password, 10);
-
-    // שליחה ל־DAL
     const user_id = await dal.createUserWithPasswordHash(userFields, password_hash);
 
     return { id: user_id, ...userFields };

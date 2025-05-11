@@ -3,13 +3,17 @@ const pool = require('../config/connection');
 // Get all rows from a table (only active rows)
 // Get all rows from a table (only active rows, with optional filters)
 async function getAll(table, filters = {}) {
+
     let sql = 'SELECT * FROM ?? WHERE is_active = true';
     const params = [table];
 
-    for (const key in filters) {
+  for (const key in filters) {
+    if (filters[key] !== undefined && filters[key] !== "") {
         sql += ` AND ${key} = ?`;
         params.push(filters[key]);
     }
+}
+
 
     console.log('SQL:', sql);
     console.log('Params:', params);
@@ -32,15 +36,13 @@ async function createUserWithPasswordHash(userData, password_hash) {
     const connection = await pool.getConnection();
     try {
         await connection.beginTransaction();
-
-        // יצירת המשתמש
         if (userData.is_active === undefined) {
             userData.is_active = true;
         }
         const [userResult] = await connection.query('INSERT INTO users SET ?', userData);
         const user_id = userResult.insertId;
 
-        // שמירת הסיסמה בטבלת passwords
+        // save passwords
         await connection.query('INSERT INTO passwords SET ?', {
             user_id,
             password_hash
@@ -66,18 +68,11 @@ async function getById(table, id) {
 
 // Create a new row (default to active = true if not specified)
 async function create(table, data) {
-    if (data.is_active === undefined) {
-
-        data.is_active = true;
-    }
-    
-    const [result] = await pool.query('INSERT INTO ?? SET ?', [table, data]);
-    const insertedId = result.insertId;
-
-    const [rows] = await pool.query('SELECT * FROM ?? WHERE id = ?', [table, insertedId]);
-
-    return rows[0]; // נחזיר את כל הרשומה החדש
-}
+    data.is_active ??= true;
+    const [res] = await pool.query('INSERT INTO ?? SET ?', [table, data]);
+    return { id: res.insertId, ...data };
+  }
+  
 
 // Update an existing row
 async function update(table, id, data) {

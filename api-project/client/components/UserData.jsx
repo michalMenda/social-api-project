@@ -32,7 +32,6 @@ function UserData({ id, onClose }) {
       )}
       <h1>{user.name} - Details</h1>
       <p><strong>Name:</strong> {user.name}</p>
-      <p><strong>Username:</strong> {user.username}</p>
       <p><strong>Email:</strong> {user.email}</p>
     </div>
   );

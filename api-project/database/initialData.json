@@ -406,104 +406,25 @@
       "body": "Final thoughts"
     }
   ],
-  "comments": [
-    {
-      "id": 1,
-      "post_id": 1,
-      "body": "Comment 1 for post 1",
-      "is_active": true
-    },
-    {
-      "id": 2,
-      "post_id": 1,
-      "body": "Comment 2 for post 1",
-      "is_active": true
-    },
-    {
-      "id": 3,
-      "post_id": 2,
-      "body": "Comment 1 for post 2",
-      "is_active": true
-    },
-    {
-      "id": 4,
-      "post_id": 2,
-      "body": "Comment 2 for post 2",
-      "is_active": true
-    },
-    {
-      "id": 11,
-      "post_id": 11,
-      "user_id": 4,
-      "body": "Great post!"
-    },
-    {
-      "id": 12,
-      "post_id": 11,
-      "user_id": 4,
-      "body": "Thanks for sharing."
-    },
-    {
-      "id": 13,
-      "post_id": 12,
-      "user_id": 4,
-      "body": "Interesting!"
-    },
-    {
-      "id": 14,
-      "post_id": 12,
-      "user_id": 4,
-      "body": "Loved it."
-    },
-    {
-      "id": 15,
-      "post_id": 13,
-      "user_id": 4,
-      "body": "Good job."
-    },
-    {
-      "id": 16,
-      "post_id": 13,
-      "user_id": 4,
-      "body": "Keep it up."
-    },
-    {
-      "id": 17,
-      "post_id": 14,
-      "user_id": 3,
-      "body": "Nice work!"
-    },
-    {
-      "id": 18,
-      "post_id": 14,
-      "user_id": 3,
-      "body": "Very helpful."
-    },
-    {
-      "id": 19,
-      "post_id": 15,
-      "user_id": 3,
-      "body": "Thanks!"
-    },
-    {
-      "id": 20,
-      "post_id": 15,
-      "user_id": 3,
-      "body": "Useful info."
-    },
-    {
-      "id": 21,
-      "post_id": 16,
-      "user_id": 3,
-      "body": "I agree."
-    },
-    {
-      "id": 22,
-      "post_id": 16,
-      "user_id": 3,
-      "body": "Good point."
-    }
-  ],
+"comments": [
+  { "id": 1, "post_id": 1, "body": "Comment 1 for post 1", "is_active": true, "email": "user1@example.com" },
+  { "id": 2, "post_id": 1, "body": "Comment 2 for post 1", "is_active": true, "email": "user1@example.com" },
+  { "id": 3, "post_id": 2, "body": "Comment 1 for post 2", "is_active": true, "email": "user1@example.com" },
+  { "id": 4, "post_id": 2, "body": "Comment 2 for post 2", "is_active": true, "email": "user1@example.com" },
+  { "id": 11, "post_id": 11, "user_id": 4, "body": "Great post!", "email": "user4@example.com" },
+  { "id": 12, "post_id": 11, "user_id": 4, "body": "Thanks for sharing.", "email": "user4@example.com" },
+  { "id": 13, "post_id": 12, "user_id": 4, "body": "Interesting!", "email": "user4@example.com" },
+  { "id": 14, "post_id": 12, "user_id": 4, "body": "Loved it.", "email": "user4@example.com" },
+  { "id": 15, "post_id": 13, "user_id": 4, "body": "Good job.", "email": "user4@example.com" },
+  { "id": 16, "post_id": 13, "user_id": 4, "body": "Keep it up.", "email": "user4@example.com" },
+  { "id": 17, "post_id": 14, "user_id": 3, "body": "Nice work!", "email": "user3@example.com" },
+  { "id": 18, "post_id": 14, "user_id": 3, "body": "Very helpful.", "email": "user3@example.com" },
+  { "id": 19, "post_id": 15, "user_id": 3, "body": "Thanks!", "email": "user3@example.com" },
+  { "id": 20, "post_id": 15, "user_id": 3, "body": "Useful info.", "email": "user3@example.com" },
+  { "id": 21, "post_id": 16, "user_id": 3, "body": "I agree.", "email": "user3@example.com" },
+  { "id": 22, "post_id": 16, "user_id": 3, "body": "Good point.", "email": "user3@example.com" }
+]
+,
   "passwords": [
     {
       "user_id": 1,
