@@ -32,6 +32,7 @@ function AddItem({ keys, type, addDisplay, defaltValues, setDisplayChanged = () 
             }
 
             const newItem = await response.json();
+            console.log("השרת החזיר את האובייקט החדש:", newItem);
             addDisplay(newItem);
             setDisplayChanged(true);
             setItem(defaltValues);

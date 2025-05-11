@@ -24,8 +24,8 @@ function createGenericRouter(table) {
 
     router.post('/', async (req, res) => {
         try {
-            const newId = await bl.createItem(table, req.body);
-            res.status(201).json({ id: newId });
+            const newItem = await bl.createItem(table, req.body);
+            res.status(201).json(newItem);
         } catch (error) {
             res.status(500).json({ error: error.message });
         }

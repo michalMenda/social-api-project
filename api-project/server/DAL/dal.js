@@ -67,10 +67,16 @@ async function getById(table, id) {
 // Create a new row (default to active = true if not specified)
 async function create(table, data) {
     if (data.is_active === undefined) {
+
         data.is_active = true;
     }
+    
     const [result] = await pool.query('INSERT INTO ?? SET ?', [table, data]);
-    return result.insertId
+    const insertedId = result.insertId;
+
+    const [rows] = await pool.query('SELECT * FROM ?? WHERE id = ?', [table, insertedId]);
+
+    return rows[0]; // נחזיר את כל הרשומה החדש
 }
 
 // Update an existing row
@@ -83,4 +89,4 @@ async function remove(table, id) {
     await pool.query('UPDATE ?? SET is_active = false WHERE id = ?', [table, id]);
 }
 
-module.exports = { getAll, getById, create, update, remove,getUserWithPassword ,createUserWithPasswordHash };
+module.exports = { getAll, getById, create, update, remove, getUserWithPassword, createUserWithPasswordHash };

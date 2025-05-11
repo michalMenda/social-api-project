@@ -241,6 +241,66 @@
       "user_id": 2,
       "title": "Todo 10 for user 2",
       "is_active": true
+    },
+    {
+      "id": 21,
+      "user_id": 3,
+      "title": "Buy groceries",
+      "is_active": true
+    },
+    {
+      "id": 22,
+      "user_id": 3,
+      "title": "Walk the dog",
+      "is_active": true
+    },
+    {
+      "id": 23,
+      "user_id": 3,
+      "title": "Read a book",
+      "is_active": true
+    },
+    {
+      "id": 24,
+      "user_id": 3,
+      "title": "Pay bills",
+      "is_active": true
+    },
+    {
+      "id": 25,
+      "user_id": 3,
+      "title": "Practice coding",
+      "is_active": true
+    },
+    {
+      "id": 26,
+      "user_id": 4,
+      "title": "Plan vacation",
+      "is_active": true
+    },
+    {
+      "id": 27,
+      "user_id": 4,
+      "title": "Clean the house",
+      "is_active": true
+    },
+    {
+      "id": 28,
+      "user_id": 4,
+      "title": "Call grandma",
+      "is_active": true
+    },
+    {
+      "id": 29,
+      "user_id": 4,
+      "title": "Attend meeting",
+      "is_active": true
+    },
+    {
+      "id": 30,
+      "user_id": 4,
+      "title": "Write blog post",
+      "is_active": true
     }
   ],
   "posts": [
@@ -278,6 +338,72 @@
       "title": "Post 5 for user 1",
       "body": "Body of post 5 for user 1",
       "is_active": true
+    },
+    {
+      "id": 6,
+      "user_id": 2,
+      "title": "User 2 - Post 1",
+      "body": "This is the first post by user 2."
+    },
+    {
+      "id": 7,
+      "user_id": 2,
+      "title": "User 2 - Post 2",
+      "body": "This is the second post by user 2."
+    },
+    {
+      "id": 8,
+      "user_id": 2,
+      "title": "User 2 - Post 3",
+      "body": "This is the third post by user 2."
+    },
+    {
+      "id": 9,
+      "user_id": 2,
+      "title": "User 2 - Post 4",
+      "body": "This is the fourth post by user 2."
+    },
+    {
+      "id": 10,
+      "user_id": 2,
+      "title": "User 2 - Post 5",
+      "body": "This is the fifth post by user 2."
+    },
+    {
+      "id": 11,
+      "user_id": 3,
+      "title": "First post by user 3",
+      "body": "Content of the first post"
+    },
+    {
+      "id": 12,
+      "user_id": 3,
+      "title": "Second post by user 3",
+      "body": "More content here"
+    },
+    {
+      "id": 13,
+      "user_id": 3,
+      "title": "Third post by user 3",
+      "body": "Even more content"
+    },
+    {
+      "id": 14,
+      "user_id": 4,
+      "title": "First post by user 4",
+      "body": "Intro by user 4"
+    },
+    {
+      "id": 15,
+      "user_id": 4,
+      "title": "Second post by user 4",
+      "body": "Daily updates"
+    },
+    {
+      "id": 16,
+      "user_id": 4,
+      "title": "Third post by user 4",
+      "body": "Final thoughts"
     }
   ],
   "comments": [
@@ -304,6 +430,78 @@
       "post_id": 2,
       "body": "Comment 2 for post 2",
       "is_active": true
+    },
+    {
+      "id": 11,
+      "post_id": 11,
+      "user_id": 4,
+      "body": "Great post!"
+    },
+    {
+      "id": 12,
+      "post_id": 11,
+      "user_id": 4,
+      "body": "Thanks for sharing."
+    },
+    {
+      "id": 13,
+      "post_id": 12,
+      "user_id": 4,
+      "body": "Interesting!"
+    },
+    {
+      "id": 14,
+      "post_id": 12,
+      "user_id": 4,
+      "body": "Loved it."
+    },
+    {
+      "id": 15,
+      "post_id": 13,
+      "user_id": 4,
+      "body": "Good job."
+    },
+    {
+      "id": 16,
+      "post_id": 13,
+      "user_id": 4,
+      "body": "Keep it up."
+    },
+    {
+      "id": 17,
+      "post_id": 14,
+      "user_id": 3,
+      "body": "Nice work!"
+    },
+    {
+      "id": 18,
+      "post_id": 14,
+      "user_id": 3,
+      "body": "Very helpful."
+    },
+    {
+      "id": 19,
+      "post_id": 15,
+      "user_id": 3,
+      "body": "Thanks!"
+    },
+    {
+      "id": 20,
+      "post_id": 15,
+      "user_id": 3,
+      "body": "Useful info."
+    },
+    {
+      "id": 21,
+      "post_id": 16,
+      "user_id": 3,
+      "body": "I agree."
+    },
+    {
+      "id": 22,
+      "post_id": 16,
+      "user_id": 3,
+      "body": "Good point."
     }
   ],
   "passwords": [
