@@ -1,5 +1,5 @@
 const express = require('express');
-const bl = require('./BL/logic');
+const bl = require('../BL/logic');
 
 function createGenericRouter(table) {
     const router = express.Router();

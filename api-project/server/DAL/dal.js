@@ -1,4 +1,4 @@
-const pool = require('../config/connection');
+const pool = require('./connection');
 
 // Get all rows from a table (only active rows)
 // Get all rows from a table (only active rows, with optional filters)

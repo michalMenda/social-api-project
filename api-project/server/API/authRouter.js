@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const bl = require('./BL/logic');
+const bl = require('../BL/logic');
 
 // התחברות
 router.post('/login', async (req, res) => {

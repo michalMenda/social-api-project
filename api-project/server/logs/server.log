@@ -1,0 +1,9 @@
+[2025-05-11T17:07:51.128Z] [GET ALL] | {"table":"posts","filters":{"user_id":""}}
+[2025-05-11T17:07:51.203Z] [GET ALL] | {"table":"posts","filters":{"user_id":""}}
+[2025-05-11T17:07:58.411Z] [CREATE] Item created | {"table":"posts","data":{"user_id":1,"title":"''''''''","is_active":true}}
+[2025-05-11T17:08:01.125Z] [DELETE] | {"table":"posts","id":"19"}
+[2025-05-11T17:08:30.216Z] [LOGIN ATTEMPT] | {"email":"Sincere@april.biz"}
+[2025-05-11T17:08:30.306Z] [LOGIN SUCCESS] | {"userId":1}
+[2025-05-11T17:08:32.126Z] [GET ALL] | {"table":"todos","filters":{"user_id":"1"}}
+[2025-05-11T17:08:32.148Z] [GET ALL] | {"table":"todos","filters":{"user_id":"1"}}
+[2025-05-11T17:08:33.381Z] [UPDATE] | {"table":"todos","id":"1","data":{"title":"Todo 1 for user 1","user_id":1,"is_active":1,"completed":true}}

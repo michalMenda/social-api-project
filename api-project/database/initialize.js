@@ -1,5 +1,5 @@
 // database/initialize.js
-const mysql = require('../server/config/connection');
+const mysql = require('../server/DAL/connection');
 const fs = require('fs');
 const path = require('path');
 const bcrypt = require('bcrypt');
