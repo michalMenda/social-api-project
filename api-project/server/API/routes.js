@@ -17,14 +17,7 @@ function createGenericRouter(table) {
         }
     });
 
-    router.get('/:id', async (req, res) => {
-        try {
-            const item = await bl.getItemById(table, req.params.id);
-            res.json(item);
-        } catch (error) {
-            res.status(500).json({ error: error.message });
-        }
-    });
+
 
     router.post('/', async (req, res) => {
         try {

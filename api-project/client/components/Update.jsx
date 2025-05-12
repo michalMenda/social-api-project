@@ -3,7 +3,7 @@ import { FaPen } from "react-icons/fa";
 import "../css/Update.css";
 import useHandleError from "./useHandleError";
 import "../js-files/refreshToken"; 
-
+import Cookies from 'js-cookie';
 function Update({ item, type, updateDisplay, setDisplayChanged = () => {} }) {
     const [showUpdateDetails, setShowUpdateDetails] = useState(false);
     const [updatedItem, setUpdatedItem] = useState(item);
@@ -29,7 +29,7 @@ function Update({ item, type, updateDisplay, setDisplayChanged = () => {} }) {
     };
 
     async function updateItem() {
-        let token = localStorage.getItem("accessToken");
+        let token = Cookies.get("accessToken");
 
         try {
             let response = await sendUpdateRequest(token);

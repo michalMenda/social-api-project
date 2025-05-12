@@ -1,3 +1,4 @@
+import Cookies from 'js-cookie';
 const refreshToken = async () => {
     const res = await fetch('http://localhost:3000/refresh', {
         method: 'POST',
@@ -7,6 +8,6 @@ const refreshToken = async () => {
     if (!res.ok) throw new Error("Failed to refresh token");
 
     const data = await res.json();
-    localStorage.setItem("accessToken", data.accessToken); // ✅ שמירת הטוקן החדש
+    Cookies.set("accessToken", data.accessToken); // ✅ שמירת הטוקן החדש
     return data.accessToken;
 };

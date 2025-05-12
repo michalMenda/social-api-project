@@ -56,11 +56,7 @@ async function getAllItems(table, filters = {}) {
     return dal.getAll(table, filters);
 }
 
-// שליפה לפי ID
-async function getItemById(table, id) {
-    log(`[GET BY ID]`, { table, id });
-    // return dal.getById(table, id);
-}
+
 
 // עדכון
 async function updateItem(table, id, data) {
@@ -106,7 +102,6 @@ async function registerUser(userData) {
 module.exports = {
     createItem,
     getAllItems,
-    getItemById,
     updateItem,
     deleteItem,
     loginUser,

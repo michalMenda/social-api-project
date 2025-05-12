@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import "../css/AddItem.css";
 import useHandleError from "./useHandleError";
 import '../js-files/refreshToken';
+import Cookies from 'js-cookie';
+
 function AddItem({ keys, type, addDisplay, defaltValues, setDisplayChanged = () => { } }) {
     const [showAddItem, setShowAddItem] = useState(false);
     const [item, setItem] = useState(defaltValues);
@@ -34,7 +36,7 @@ function AddItem({ keys, type, addDisplay, defaltValues, setDisplayChanged = () 
             return;
         }
 
-        let token = localStorage.getItem("accessToken");
+        let token = Cookies.get("accessToken");
 
         try {
             let response = await sendAddRequest(token);

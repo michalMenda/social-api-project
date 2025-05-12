@@ -78,11 +78,28 @@ async function initializeDatabase() {
 
     console.log('🔧 Ensuring required columns exist…');
 
+
+
     for (const tbl of ['users', 'todos', 'posts', 'comments', 'passwords']) {
       await ensureColumnExists(tbl, 'is_active', 'BOOLEAN DEFAULT TRUE');
     }
 
     await ensureColumnExists('comments', 'email', 'VARCHAR(255)');
+
+    console.log('🔧 Dropping old trg_delete_passwords (if exists)…');
+    await mysql.query(`DROP TRIGGER IF EXISTS trg_delete_passwords`);
+
+    console.log('🔧 Creating trg_delete_passwords…');
+    await mysql.query(`
+  CREATE TRIGGER trg_delete_passwords
+  AFTER DELETE ON users
+  FOR EACH ROW
+  BEGIN
+    DELETE FROM passwords
+    WHERE user_id = OLD.id;
+  END
+`);
+
 
     console.log('🔧 Dropping old triggers…');
     await mysql.query(`DROP TRIGGER IF EXISTS deactivate_user_todos`);

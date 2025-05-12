@@ -5,6 +5,7 @@ import useHandleError from "./useHandleError";
 import Update from "./Update";
 import Delete from "./DeleteItem";
 import  "../js-files/refreshToken";
+import Cookies from 'js-cookie';
 function Todo({ todo }) {
     const [checked, setChecked] = useState(todo.completed);
     const { updateTodo, deleteTodo, setDisplayChanged } = useContext(DisplayContext);
@@ -15,7 +16,7 @@ function Todo({ todo }) {
         setChecked(newCheckedState); // Optimistic UI update
         setError(null); // Clear previous errors
     
-        let token = localStorage.getItem("accessToken");
+        let token = Cookies.get("accessToken");
     
         const sendRequest = async (accessToken) => {
             return await fetch(`http://localhost:3000/todos/${todo.id}`, {

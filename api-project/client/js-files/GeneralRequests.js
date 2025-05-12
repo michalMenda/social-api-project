@@ -1,5 +1,5 @@
 import  './refreshToken'; 
-
+import Cookies from 'js-cookie';
 export const fetchData = async (typeOfItem, attribute, id = "", handleError) => {
   const url = `http://localhost:3000/${typeOfItem}/?${attribute}=${id}`;
 
@@ -13,7 +13,7 @@ export const fetchData = async (typeOfItem, attribute, id = "", handleError) => 
   };
 
   try {
-    let token = localStorage.getItem('accessToken');
+    let token = Cookies.get("accessToken");
     let response = await makeRequest(token);
 
     if (response.status === 401 || response.status === 403) {

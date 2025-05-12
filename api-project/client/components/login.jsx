@@ -2,6 +2,7 @@ import React, { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import '../css/login.css';
 import { userContext } from "./App";
+import Cookies from 'js-cookie';
 
 function Login() {
     const [email, setEmail] = useState('');
@@ -22,7 +23,7 @@ function Login() {
 
         if (response.ok) {
             const { accessToken, user } = await response.json();
-            localStorage.setItem("accessToken", accessToken);
+            Cookies.set('accessToken', accessToken, { expires: 0.0104, sameSite: 'Lax' }); // 15 דקות ≈ 0.0104 ימים
             setUserData(user);
             localStorage.setItem("currentUser", JSON.stringify(user));
             navigate(`/home`);

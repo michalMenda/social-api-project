@@ -58,14 +58,6 @@ async function createUserWithPasswordHash(userData, password_hash) {
     }
 }
 
-
-
-// Get a single row by ID (only if active)
-async function getById(table, id) {
-    const [rows] = await pool.query('SELECT * FROM ?? WHERE id = ? AND is_active = true', [table, id]);
-    return rows[0];
-}
-
 // Create a new row (default to active = true if not specified)
 async function create(table, data) {
     data.is_active ??= true;
@@ -84,4 +76,4 @@ async function remove(table, id) {
     await pool.query('UPDATE ?? SET is_active = false WHERE id = ?', [table, id]);
 }
 
-module.exports = { getAll, getById, create, update, remove, getUserWithPassword, createUserWithPasswordHash };
+module.exports = { getAll, create, update, remove, getUserWithPassword, createUserWithPasswordHash };

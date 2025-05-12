@@ -5,7 +5,7 @@ import Posts from "./Posts";
 import Todos from "./todos";
 import "../css/UserPage.css";
 import { userContext } from "./App";
-
+import Cookies from "js-cookie";
 function UserPage() {
   const { id } = useParams();
   const navigate = useNavigate();
@@ -48,8 +48,7 @@ function UserPage() {
             to="/login"
             onClick={() => {
               localStorage.removeItem("currentUser");
-              localStorage.removeItem("accessToken");
-
+              Cookies.remove("accessToken");
               setUserData(null);
             }}
           >
