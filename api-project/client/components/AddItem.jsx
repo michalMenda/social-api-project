@@ -24,7 +24,7 @@ function AddItem({ keys, type, addDisplay, defaltValues, setDisplayChanged = () 
                 "Content-Type": "application/json",
                 ...(token && { Authorization: `Bearer ${token}` }),
             },
-            credentials: 'include', // ✅ נדרש לשליחת עוגיות של ריפרש
+            credentials: 'include', 
             body: JSON.stringify(item),
         });
     };
@@ -42,7 +42,6 @@ function AddItem({ keys, type, addDisplay, defaltValues, setDisplayChanged = () 
             let response = await sendAddRequest(token);
 
             if (response.status === 401) {
-                // ✅ הטוקן פג תוקף – ננסה לרענן
                 token = await refreshToken();
                 response = await sendAddRequest(token);
             }
@@ -52,13 +51,12 @@ function AddItem({ keys, type, addDisplay, defaltValues, setDisplayChanged = () 
             }
 
             const newItem = await response.json();
-            console.log("השרת החזיר את האובייקט החדש:", newItem);
             addDisplay(newItem);
             setDisplayChanged(true);
             setItem(defaltValues);
             setShowAddItem(false);
         } catch (error) {
-            handleError("addError", error); // ✅ תיקון אם יש שגיאת שם
+            handleError("addError", error); 
         }
     };
 
@@ -88,7 +86,7 @@ function AddItem({ keys, type, addDisplay, defaltValues, setDisplayChanged = () 
                             Send
                         </button>
                         <button className="cancel-button" onClick={() => setShowAddItem(false)}>
-                            Cancelמ
+                            Cancel
                         </button>
                     </div>
                 </div>

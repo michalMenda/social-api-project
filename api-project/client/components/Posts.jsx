@@ -11,7 +11,7 @@ import "../css/post.css";
 export const PostsContext = createContext();
 
 function Posts({ id }) {
-  const [showPosts, setShowPosts] = useState(true); // ברירת מחדל – להראות את כולם
+  const [showPosts, setShowPosts] = useState(true);
   const [displayChanged, setDisplayChanged] = useState(false);
   const [posts, setPosts, updatePosts, deletePosts, addPosts] = useHandleDisplay([]);
   const { handleError } = useHandleError();
@@ -24,12 +24,12 @@ function Posts({ id }) {
   };
 
   useEffect(() => {
-    fetchPosts(); // כל הפוסטים כברירת מחדל
+    fetchPosts(); 
   }, [id]);
 
   const togglePosts = async () => {
     const newShowPosts = !showPosts;
-    const user_id = newShowPosts ? "" : 'null'; // אם true → כל הפוסטים, אם false → שלי
+    const user_id = newShowPosts ? "" : 'null'; 
     navigate(`/users/${id}/posts`);
     await fetchPosts(user_id);
     setShowPosts(newShowPosts);

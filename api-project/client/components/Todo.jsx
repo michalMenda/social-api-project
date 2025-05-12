@@ -39,7 +39,7 @@ function Todo({ todo }) {
             let response = await sendRequest(token);
     
             if (response.status === 401) {
-                token = await refreshToken(); // ✅ רענון טוקן
+                token = await refreshToken(); 
                 response = await sendRequest(token);
             }
     

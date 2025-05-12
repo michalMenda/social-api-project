@@ -2,7 +2,7 @@ const pool = require('./connection');
 
 // Get all rows from a table (only active rows)
 // Get all rows from a table (only active rows, with optional filters)
-async function getAll(table, filters = {}) {
+async function get(table, filters = {}) {
 
     let sql = 'SELECT * FROM ?? WHERE is_active = true';
     const params = [table];
@@ -76,4 +76,4 @@ async function remove(table, id) {
     await pool.query('UPDATE ?? SET is_active = false WHERE id = ?', [table, id]);
 }
 
-module.exports = { getAll, create, update, remove, getUserWithPassword, createUserWithPasswordHash };
+module.exports = { get, create, update, remove, getUserWithPassword, createUserWithPasswordHash };

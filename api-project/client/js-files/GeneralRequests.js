@@ -17,7 +17,7 @@ export const fetchData = async (typeOfItem, attribute, id = "", handleError) => 
     let response = await makeRequest(token);
 
     if (response.status === 401 || response.status === 403) {
-      token = await refreshToken(); // שימוש בפונקציה המשותפת
+      token = await refreshToken(); 
       response = await makeRequest(token);
     }
 

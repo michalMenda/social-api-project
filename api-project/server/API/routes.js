@@ -10,7 +10,7 @@ function createGenericRouter(table) {
             if (query.user_id === 'null' && req.user && req.user.id) {
                 query.user_id = req.user.id;
             }
-            const items = await bl.getAllItems(table, query);
+            const items = await bl.getItems(table, query);
             res.json(items);
         } catch (error) {
             res.status(500).json({ error: error.message });

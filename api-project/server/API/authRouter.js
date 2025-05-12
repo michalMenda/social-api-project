@@ -21,7 +21,7 @@ router.post('/login', async (req, res) => {
 router.post('/register', async (req, res) => {
     try {
         const { name, email, address, phone, password } = req.body;
-        const existing = await bl.getAllItems('users', { name });
+        const existing = await bl.getItems('users', { name });
         if (existing.length > 0) {
             return res.status(400).json({ error: 'User already exists' });
         }

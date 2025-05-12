@@ -6,7 +6,6 @@ const { log } = require('../utils/logger');
 const SECRET = process.env.JWT_SECRET || 'access-secret';
 const REFRESH_SECRET = process.env.JWT_REFRESH_SECRET || 'refresh-secret';
 
-// 🔐 יצירת Access Token
 function createAccessToken(user, ip) {
     return jwt.sign(
         { id: user.id, email: user.email, ip },
@@ -15,7 +14,6 @@ function createAccessToken(user, ip) {
     );
 }
 
-// 🔐 יצירת Refresh Token
 function createRefreshToken(user, ip) {
     return jwt.sign(
         { id: user.id, email: user.email, ip },
@@ -24,7 +22,6 @@ function createRefreshToken(user, ip) {
     );
 }
 
-// 🧠 שליחת טוקנים ללקוח
 function sendAuthTokens(res, user, ip) {
     const accessToken = createAccessToken(user, ip);
     const refreshToken = createRefreshToken(user, ip);
@@ -39,7 +36,6 @@ function sendAuthTokens(res, user, ip) {
     res.json({ user, accessToken });
 }
 
-// יצירת רשומה כללית
 async function createItem(table, data) {
     if (!data || Object.keys(data).length === 0) {
         log(`[CREATE FAILED] No data provided`, { table });
@@ -50,27 +46,22 @@ async function createItem(table, data) {
     return result;
 }
 
-// שליפה עם סינון
-async function getAllItems(table, filters = {}) {
-    log(`[GET ALL]`, { table, filters });
-    return dal.getAll(table, filters);
+async function getItems(table, filters = {}) {
+    log(`[GET]`, { table, filters });
+    return dal.get(table, filters);
 }
 
 
-
-// עדכון
 async function updateItem(table, id, data) {
     log(`[UPDATE]`, { table, id, data });
     return dal.update(table, id, data);
 }
 
-// מחיקה
 async function deleteItem(table, id) {
     log(`[DELETE]`, { table, id });
     return dal.remove(table, id);
 }
 
-// התחברות
 async function loginUser(email, password) {
     log(`[LOGIN ATTEMPT]`, { email });
     const user = await dal.getUserWithPassword(email);
@@ -90,7 +81,6 @@ async function loginUser(email, password) {
     return userWithoutPassword;
 }
 
-// הרשמה
 async function registerUser(userData) {
     const { password, ...userFields } = userData;
     const password_hash = await bcrypt.hash(password, 10);
@@ -101,7 +91,7 @@ async function registerUser(userData) {
 
 module.exports = {
     createItem,
-    getAllItems,
+    getItems,
     updateItem,
     deleteItem,
     loginUser,

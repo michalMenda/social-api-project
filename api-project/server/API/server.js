@@ -4,13 +4,12 @@ const cors = require('cors');
 const cookieParser = require('cookie-parser');
 
 app.use(cors({
-    origin: 'http://localhost:5173', // או כתובת הקליינט שלך
-    credentials: true               // חשוב לשליחת cookies
+    origin: 'http://localhost:5173', 
+    credentials: true              
 }));
 app.use(express.json());
 app.use(cookieParser());
-app.set('trust proxy', true); // אם תעברי לפרודקשן/nginx
-
+app.set('trust proxy', true); 
 const authRouter = require('./authRouter');
 const createRouter = require('./routes');
 const varifyToken= require('./auth');

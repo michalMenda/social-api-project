@@ -16,14 +16,14 @@ function Login() {
             headers: {
                 'Content-Type': 'application/json'
             },
-            credentials: 'include', // כדי שה-refreshToken יישלח ב-cookie
+            credentials: 'include', 
             body: JSON.stringify({ email, password })
         }
         );
 
         if (response.ok) {
             const { accessToken, user } = await response.json();
-            Cookies.set('accessToken', accessToken, { expires: 0.0104, sameSite: 'Lax' }); // 15 דקות ≈ 0.0104 ימים
+            Cookies.set('accessToken', accessToken, { expires: 0.0104, sameSite: 'Lax' }); 
             setUserData(user);
             localStorage.setItem("currentUser", JSON.stringify(user));
             navigate(`/home`);

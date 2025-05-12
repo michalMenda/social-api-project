@@ -8,6 +8,6 @@ const refreshToken = async () => {
     if (!res.ok) throw new Error("Failed to refresh token");
 
     const data = await res.json();
-    Cookies.set("accessToken", data.accessToken); // ✅ שמירת הטוקן החדש
+    Cookies.set("accessToken", data.accessToken); 
     return data.accessToken;
 };
