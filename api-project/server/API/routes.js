@@ -42,12 +42,18 @@ function createGenericRouter(table) {
 
     router.put('/:id', async (req, res) => {
         try {
-            await bl.updateItem(table, req.params.id, req.body);
+            const body = { ...req.body };
+            if ((body.user_id === 'null' || body.user_id === null) && req.user && req.user.id) {
+                body.user_id = req.user.id;
+            }
+    
+            await bl.updateItem(table, req.params.id, body);
             res.json({ message: `${table.slice(0, -1)} updated` });
         } catch (error) {
             res.status(500).json({ error: error.message });
         }
     });
+    
 
     router.delete('/:id', async (req, res) => {
         try {

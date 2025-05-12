@@ -59,7 +59,7 @@ async function getAllItems(table, filters = {}) {
 // שליפה לפי ID
 async function getItemById(table, id) {
     log(`[GET BY ID]`, { table, id });
-    return dal.getById(table, id);
+    // return dal.getById(table, id);
 }
 
 // עדכון

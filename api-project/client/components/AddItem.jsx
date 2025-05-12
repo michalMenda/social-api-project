@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import "../css/AddItem.css";
 import useHandleError from "./useHandleError";
-
+import '../js-files/refreshToken';
 function AddItem({ keys, type, addDisplay, defaltValues, setDisplayChanged = () => { } }) {
-    const [showAddItem, setShowAddItem] = useState(true);
+    const [showAddItem, setShowAddItem] = useState(false);
     const [item, setItem] = useState(defaltValues);
     const { handleError } = useHandleError();
 
@@ -27,18 +27,6 @@ function AddItem({ keys, type, addDisplay, defaltValues, setDisplayChanged = () 
         });
     };
 
-    const refreshToken = async () => {
-        const res = await fetch('http://localhost:3000/refresh', {
-            method: 'POST',
-            credentials: 'include', // ✅ כדי לשלוח את ה־refresh token מהעוגיות
-        });
-
-        if (!res.ok) throw new Error("Failed to refresh token");
-
-        const data = await res.json();
-        localStorage.setItem("accessToken", data.accessToken); // ✅ שמירת הטוקן החדש
-        return data.accessToken;
-    };
 
     const addNewItem = async () => {
         if (!isFormValid) {

@@ -4,7 +4,7 @@ import { DisplayContext } from "./todos"
 import useHandleError from "./useHandleError";
 import Update from "./Update";
 import Delete from "./DeleteItem";
-
+import  "../js-files/refreshToken";
 function Todo({ todo }) {
     const [checked, setChecked] = useState(todo.completed);
     const { updateTodo, deleteTodo, setDisplayChanged } = useContext(DisplayContext);
@@ -14,13 +14,17 @@ function Todo({ todo }) {
         const newCheckedState = !checked;
         setChecked(newCheckedState); // Optimistic UI update
         setError(null); // Clear previous errors
-
-        try {
-            const response = await fetch(`http://localhost:3000/todos/${todo.id}`, {
+    
+        let token = localStorage.getItem("accessToken");
+    
+        const sendRequest = async (accessToken) => {
+            return await fetch(`http://localhost:3000/todos/${todo.id}`, {
                 method: "PUT",
                 headers: {
                     "Content-Type": "application/json",
+                    ...(accessToken && { Authorization: `Bearer ${accessToken}` }),
                 },
+                credentials: 'include',
                 body: JSON.stringify({
                     title: todo.title,
                     user_id: 'null',
@@ -28,7 +32,16 @@ function Todo({ todo }) {
                     completed: newCheckedState,
                 }),
             });
-
+        };
+    
+        try {
+            let response = await sendRequest(token);
+    
+            if (response.status === 401) {
+                token = await refreshToken(); // ✅ רענון טוקן
+                response = await sendRequest(token);
+            }
+    
             if (!response.ok) {
                 throw new Error("Failed to update the todo status.");
             }
@@ -37,6 +50,7 @@ function Todo({ todo }) {
             handleError("getError", err);
         }
     };
+    
 
     return (
         <div className="todo-container">

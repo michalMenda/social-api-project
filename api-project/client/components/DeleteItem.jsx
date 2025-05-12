@@ -2,7 +2,7 @@ import React from "react";
 import { FaTrash } from "react-icons/fa";
 import '../css/Delete.css';
 import useHandleError from "./useHandleError";
-
+import "../js-files/refreshToken"; 
 function Delete({ id, type, deleteDisplay, setDisplayChanged = () => {}, dependent }) {
     const { handleError } = useHandleError();
 
@@ -19,19 +19,6 @@ function Delete({ id, type, deleteDisplay, setDisplayChanged = () => {}, depende
             },
             credentials: 'include',
         });
-    };
-
-    const refreshToken = async () => {
-        const res = await fetch('http://localhost:3000/refresh', {
-            method: 'POST',
-            credentials: 'include',
-        });
-
-        if (!res.ok) throw new Error("Failed to refresh token");
-
-        const data = await res.json();
-        localStorage.setItem("accessToken", data.accessToken);
-        return data.accessToken;
     };
 
     async function deleteItem() {

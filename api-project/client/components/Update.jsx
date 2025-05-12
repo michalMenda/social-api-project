@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { FaPen } from "react-icons/fa";
 import "../css/Update.css";
 import useHandleError from "./useHandleError";
+import "../js-files/refreshToken"; 
 
 function Update({ item, type, updateDisplay, setDisplayChanged = () => {} }) {
     const [showUpdateDetails, setShowUpdateDetails] = useState(false);
@@ -25,19 +26,6 @@ function Update({ item, type, updateDisplay, setDisplayChanged = () => {} }) {
             credentials: 'include',
             body: JSON.stringify({ ...item, ...updatedItem }),
         });
-    };
-
-    const refreshToken = async () => {
-        const res = await fetch('http://localhost:3000/refresh', {
-            method: 'POST',
-            credentials: 'include',
-        });
-
-        if (!res.ok) throw new Error("Failed to refresh token");
-
-        const data = await res.json();
-        localStorage.setItem("accessToken", data.accessToken);
-        return data.accessToken;
     };
 
     async function updateItem() {
