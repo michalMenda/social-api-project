@@ -23,7 +23,7 @@ function Todo({ todo }) {
                 },
                 body: JSON.stringify({
                     title: todo.title,
-                    user_id: todo.user_id,
+                    user_id: 'null',
                     is_active: todo.is_active,
                     completed: newCheckedState,
                 }),

@@ -29,7 +29,7 @@ function Posts({ id }) {
 
   const togglePosts = async () => {
     const newShowPosts = !showPosts;
-    const user_id = newShowPosts ? "" : id; // אם true → כל הפוסטים, אם false → שלי
+    const user_id = newShowPosts ? "" : 'null'; // אם true → כל הפוסטים, אם false → שלי
     navigate(`/users/${id}/posts`);
     await fetchPosts(user_id);
     setShowPosts(newShowPosts);
@@ -55,7 +55,7 @@ function Posts({ id }) {
           type="posts"
           addDisplay={addPosts}
           setDisplayChanged={setDisplayChanged}
-          defaltValues={{ user_id: id }}
+          defaltValues={{ user_id: 'null' }}
         />
         {posts && posts.map((post) => <Post key={post.id} post={post} />)}
       </div>

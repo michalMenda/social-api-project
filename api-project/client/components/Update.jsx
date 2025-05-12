@@ -1,11 +1,13 @@
-import React, { useState, useContext } from "react";
+import React, { useState } from "react";
 import { FaPen } from "react-icons/fa";
-import "../css/Update.css"
+import "../css/Update.css";
 import useHandleError from "./useHandleError";
-function Update({ item, type, updateDisplay, setDisplayChanged = () => { } }) {
+
+function Update({ item, type, updateDisplay, setDisplayChanged = () => {} }) {
     const [showUpdateDetails, setShowUpdateDetails] = useState(false);
     const [updatedItem, setUpdatedItem] = useState(item);
     const { handleError } = useHandleError();
+
     const handleInputChange = (key, value) => {
         setUpdatedItem((prevItem) => ({
             ...prevItem,
@@ -13,20 +15,49 @@ function Update({ item, type, updateDisplay, setDisplayChanged = () => { } }) {
         }));
     };
 
+    const sendUpdateRequest = async (token) => {
+        return await fetch(`http://localhost:3000/${type}/${item.id}`, {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json",
+                ...(token && { Authorization: `Bearer ${token}` }),
+            },
+            credentials: 'include',
+            body: JSON.stringify({ ...item, ...updatedItem }),
+        });
+    };
+
+    const refreshToken = async () => {
+        const res = await fetch('http://localhost:3000/refresh', {
+            method: 'POST',
+            credentials: 'include',
+        });
+
+        if (!res.ok) throw new Error("Failed to refresh token");
+
+        const data = await res.json();
+        localStorage.setItem("accessToken", data.accessToken);
+        return data.accessToken;
+    };
+
     async function updateItem() {
-        const updatedData = { ...item, ...updatedItem };
+        let token = localStorage.getItem("accessToken");
+
         try {
-            let response = await fetch(`http://localhost:3000/${type}/${item.id}`, {
-                method: "PUT",
-                headers: {
-                    "Content-Type": "application/json",
-                },
-                body: JSON.stringify(updatedData),
-            });
+            let response = await sendUpdateRequest(token);
+
+            if (response.status === 401) {
+                token = await refreshToken();
+                response = await sendUpdateRequest(token);
+            }
+
             if (response.ok) {
+                const updatedData = { ...item, ...updatedItem };
                 updateDisplay(updatedData);
                 setShowUpdateDetails(false);
                 setDisplayChanged(true);
+            } else {
+                throw new Error("Failed to update item.");
             }
         } catch (ex) {
             handleError("updateError", ex);
@@ -47,22 +78,16 @@ function Update({ item, type, updateDisplay, setDisplayChanged = () => { } }) {
                         <h2>Edit {type}</h2>
                         {Object.keys(updatedItem).map(
                             (key) =>
-                                key !== "id" &&
-                                (
+                                key !== "id" && (
                                     <div key={key} style={{ marginBottom: "10px" }}>
-                                        <label
-                                            htmlFor={key}
-                                            style={{ display: "block", fontWeight: "bold" }}
-                                        >
+                                        <label htmlFor={key} style={{ display: "block", fontWeight: "bold" }}>
                                             {key}:
                                         </label>
                                         <input
                                             id={key}
                                             value={updatedItem[key]}
                                             placeholder={key}
-                                            onChange={(e) =>
-                                                handleInputChange(key, e.target.value)
-                                            }
+                                            onChange={(e) => handleInputChange(key, e.target.value)}
                                             style={{
                                                 width: "100%",
                                                 padding: "8px",
@@ -74,12 +99,8 @@ function Update({ item, type, updateDisplay, setDisplayChanged = () => { } }) {
                                 )
                         )}
                         <div style={{ display: "flex", justifyContent: "center", gap: "10px" }}>
-                            <button onClick={updateItem} className="btn-primary">
-                                Update
-                            </button>
-                            <button onClick={handleCancel} className="btn-primary">
-                                Cancel
-                            </button>
+                            <button onClick={updateItem} className="btn-primary">Update</button>
+                            <button onClick={handleCancel} className="btn-primary">Cancel</button>
                         </div>
                     </div>
                 </div>

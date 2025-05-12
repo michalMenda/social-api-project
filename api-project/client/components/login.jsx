@@ -15,12 +15,14 @@ function Login() {
             headers: {
                 'Content-Type': 'application/json'
             },
+            credentials: 'include', // כדי שה-refreshToken יישלח ב-cookie
             body: JSON.stringify({ email, password })
         }
-    );
-    
+        );
+
         if (response.ok) {
-            const user = await response.json();
+            const { accessToken, user } = await response.json();
+            localStorage.setItem("accessToken", accessToken);
             setUserData(user);
             localStorage.setItem("currentUser", JSON.stringify(user));
             navigate(`/home`);
@@ -33,7 +35,7 @@ function Login() {
             }
         }
     }
-    
+
 
     return (
         <div>

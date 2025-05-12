@@ -48,6 +48,8 @@ function UserPage() {
             to="/login"
             onClick={() => {
               localStorage.removeItem("currentUser");
+              localStorage.removeItem("accessToken");
+
               setUserData(null);
             }}
           >

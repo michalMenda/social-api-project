@@ -1,19 +1,26 @@
 const express = require('express');
 const app = express();
 const cors = require('cors');
+const cookieParser = require('cookie-parser');
 
-app.use(cors());
+app.use(cors({
+    origin: 'http://localhost:5173', // או כתובת הקליינט שלך
+    credentials: true               // חשוב לשליחת cookies
+}));
 app.use(express.json());
-const authRouter = require('./authRouter');  
-const createRouter = require('./routes');
+app.use(cookieParser());
+app.set('trust proxy', true); // אם תעברי לפרודקשן/nginx
 
+const authRouter = require('./authRouter');
+const createRouter = require('./routes');
+const varifyToken= require('./auth');
+
+app.use(varifyToken);
 app.use('/users', createRouter('users'));
 app.use('/posts', createRouter('posts'));
 app.use('/comments', createRouter('comments'));
 app.use('/todos', createRouter('todos'));
-app.use('/', authRouter); 
-app.use('/register', authRouter);                  
-
+app.use('/', authRouter);
 
 const PORT = 3000;
 app.listen(PORT, () => {

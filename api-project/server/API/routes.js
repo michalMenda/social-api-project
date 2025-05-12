@@ -6,7 +6,11 @@ function createGenericRouter(table) {
 
     router.get('/', async (req, res) => {
         try {
-            const items = await bl.getAllItems(table, req.query);
+            const query = { ...req.query };
+            if (query.user_id === 'null' && req.user && req.user.id) {
+                query.user_id = req.user.id;
+            }
+            const items = await bl.getAllItems(table, query);
             res.json(items);
         } catch (error) {
             res.status(500).json({ error: error.message });
@@ -24,12 +28,17 @@ function createGenericRouter(table) {
 
     router.post('/', async (req, res) => {
         try {
-            const newItem = await bl.createItem(table, req.body);
+            const body = { ...req.body };
+            if (body.user_id === 'null' && req.user && req.user.id) {
+                body.user_id = req.user.id;
+            }
+            const newItem = await bl.createItem(table, body);
             res.status(201).json(newItem);
         } catch (error) {
             res.status(500).json({ error: error.message });
         }
     });
+    
 
     router.put('/:id', async (req, res) => {
         try {
