@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "../css/AddItem.css";
 import useHandleError from "./useHandleError";
-import '../js-files/refreshToken';
+import refreshToken from "../js-files/refreshToken";
 import Cookies from 'js-cookie';
 
 function AddItem({ keys, type, addDisplay, defaltValues, setDisplayChanged = () => { } }) {
@@ -41,7 +41,7 @@ function AddItem({ keys, type, addDisplay, defaltValues, setDisplayChanged = () 
         try {
             let response = await sendAddRequest(token);
 
-            if (response.status === 401) {
+            if (response.status === 401|| response.status === 403) {
                 token = await refreshToken();
                 response = await sendAddRequest(token);
             }

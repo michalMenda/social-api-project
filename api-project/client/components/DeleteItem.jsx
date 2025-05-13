@@ -2,7 +2,7 @@ import React from "react";
 import { FaTrash } from "react-icons/fa";
 import '../css/Delete.css';
 import useHandleError from "./useHandleError";
-import "../js-files/refreshToken"; 
+import refreshToken from "../js-files/refreshToken";
 import Cookies from 'js-cookie';
 function Delete({ id, type, deleteDisplay, setDisplayChanged = () => {}, dependent }) {
     const { handleError } = useHandleError();
@@ -28,7 +28,7 @@ function Delete({ id, type, deleteDisplay, setDisplayChanged = () => {}, depende
         try {
             let response = await sendDeleteRequest(token);
 
-            if (response.status === 401) {
+            if (response.status === 401|| response.status === 403) {
                 token = await refreshToken();
                 response = await sendDeleteRequest(token);
             }

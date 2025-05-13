@@ -11,3 +11,5 @@ const refreshToken = async () => {
     Cookies.set("accessToken", data.accessToken); 
     return data.accessToken;
 };
+export default refreshToken;
+export { refreshToken };

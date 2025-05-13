@@ -4,7 +4,7 @@ import { DisplayContext } from "./todos"
 import useHandleError from "./useHandleError";
 import Update from "./Update";
 import Delete from "./DeleteItem";
-import  "../js-files/refreshToken";
+import refreshToken from "../js-files/refreshToken";
 import Cookies from 'js-cookie';
 function Todo({ todo }) {
     const [checked, setChecked] = useState(todo.completed);
@@ -38,7 +38,7 @@ function Todo({ todo }) {
         try {
             let response = await sendRequest(token);
     
-            if (response.status === 401) {
+            if (response.status === 401|| response.status === 403) {
                 token = await refreshToken(); 
                 response = await sendRequest(token);
             }

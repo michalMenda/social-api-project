@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { FaPen } from "react-icons/fa";
 import "../css/Update.css";
 import useHandleError from "./useHandleError";
-import "../js-files/refreshToken"; 
+import refreshToken from "../js-files/refreshToken";
 import Cookies from 'js-cookie';
 function Update({ item, type, updateDisplay, setDisplayChanged = () => {} }) {
     const [showUpdateDetails, setShowUpdateDetails] = useState(false);
@@ -34,7 +34,7 @@ function Update({ item, type, updateDisplay, setDisplayChanged = () => {} }) {
         try {
             let response = await sendUpdateRequest(token);
 
-            if (response.status === 401) {
+            if (response.status === 401|| response.status === 403) {
                 token = await refreshToken();
                 response = await sendUpdateRequest(token);
             }
