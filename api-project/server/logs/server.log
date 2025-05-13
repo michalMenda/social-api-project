@@ -1,54 +1,54 @@
-[2025-05-11T17:07:51.128Z] [GET ALL] | {"table":"posts","filters":{"user_id":""}}
-[2025-05-11T17:07:51.203Z] [GET ALL] | {"table":"posts","filters":{"user_id":""}}
+[2025-05-11T17:07:51.128Z] [GET] | {"table":"posts","filters":{"user_id":""}}
+[2025-05-11T17:07:51.203Z] [GET] | {"table":"posts","filters":{"user_id":""}}
 [2025-05-11T17:07:58.411Z] [CREATE] Item created | {"table":"posts","data":{"user_id":1,"title":"''''''''","is_active":true}}
 [2025-05-11T17:08:01.125Z] [DELETE] | {"table":"posts","id":"19"}
 [2025-05-11T17:08:30.216Z] [LOGIN ATTEMPT] | {"email":"Sincere@april.biz"}
 [2025-05-11T17:08:30.306Z] [LOGIN SUCCESS] | {"userId":1}
-[2025-05-11T17:08:32.126Z] [GET ALL] | {"table":"todos","filters":{"user_id":"1"}}
-[2025-05-11T17:08:32.148Z] [GET ALL] | {"table":"todos","filters":{"user_id":"1"}}
+[2025-05-11T17:08:32.126Z] [GET] | {"table":"todos","filters":{"user_id":"1"}}
+[2025-05-11T17:08:32.148Z] [GET] | {"table":"todos","filters":{"user_id":"1"}}
 [2025-05-11T17:08:33.381Z] [UPDATE] | {"table":"todos","id":"1","data":{"title":"Todo 1 for user 1","user_id":1,"is_active":1,"completed":true}}
-[2025-05-11T17:59:17.194Z] [GET ALL] | {"table":"todos","filters":{"user_id":"1"}}
-[2025-05-11T17:59:17.284Z] [GET ALL] | {"table":"todos","filters":{"user_id":"1"}}
-[2025-05-11T18:26:46.329Z] [GET ALL] | {"table":"users","filters":{"id":"1"}}
-[2025-05-11T18:26:46.350Z] [GET ALL] | {"table":"users","filters":{"id":"1"}}
-[2025-05-11T18:29:47.522Z] [GET ALL] | {"table":"posts","filters":{"user_id":""}}
-[2025-05-11T18:29:47.540Z] [GET ALL] | {"table":"posts","filters":{"user_id":""}}
-[2025-05-11T18:30:15.878Z] [GET ALL] | {"table":"comments","filters":{"post_id":"1"}}
+[2025-05-11T17:59:17.194Z] [GET] | {"table":"todos","filters":{"user_id":"1"}}
+[2025-05-11T17:59:17.284Z] [GET] | {"table":"todos","filters":{"user_id":"1"}}
+[2025-05-11T18:26:46.329Z] [GET] | {"table":"users","filters":{"id":"1"}}
+[2025-05-11T18:26:46.350Z] [GET] | {"table":"users","filters":{"id":"1"}}
+[2025-05-11T18:29:47.522Z] [GET] | {"table":"posts","filters":{"user_id":""}}
+[2025-05-11T18:29:47.540Z] [GET] | {"table":"posts","filters":{"user_id":""}}
+[2025-05-11T18:30:15.878Z] [GET] | {"table":"comments","filters":{"post_id":"1"}}
 [2025-05-11T18:30:26.569Z] [LOGIN ATTEMPT] | {"email":"Sincere@april.biz"}
 [2025-05-11T18:30:26.706Z] [LOGIN SUCCESS] | {"userId":1}
-[2025-05-11T18:30:38.979Z] [GET ALL] | {"table":"posts","filters":{"user_id":""}}
-[2025-05-11T18:30:38.994Z] [GET ALL] | {"table":"posts","filters":{"user_id":""}}
-[2025-05-11T18:30:54.753Z] [GET ALL] | {"table":"posts","filters":{"user_id":""}}
-[2025-05-11T18:30:54.770Z] [GET ALL] | {"table":"posts","filters":{"user_id":""}}
-[2025-05-11T18:31:00.373Z] [GET ALL] | {"table":"posts","filters":{"user_id":""}}
-[2025-05-11T18:31:00.389Z] [GET ALL] | {"table":"posts","filters":{"user_id":""}}
+[2025-05-11T18:30:38.979Z] [GET] | {"table":"posts","filters":{"user_id":""}}
+[2025-05-11T18:30:38.994Z] [GET] | {"table":"posts","filters":{"user_id":""}}
+[2025-05-11T18:30:54.753Z] [GET] | {"table":"posts","filters":{"user_id":""}}
+[2025-05-11T18:30:54.770Z] [GET] | {"table":"posts","filters":{"user_id":""}}
+[2025-05-11T18:31:00.373Z] [GET] | {"table":"posts","filters":{"user_id":""}}
+[2025-05-11T18:31:00.389Z] [GET] | {"table":"posts","filters":{"user_id":""}}
 [2025-05-11T19:16:36.545Z] [LOGIN ATTEMPT] | {"email":"Sincere@april.biz"}
 [2025-05-11T19:16:36.899Z] [LOGIN SUCCESS] | {"userId":1}
-[2025-05-11T19:16:42.435Z] [GET ALL] | {"table":"posts","filters":{"user_id":""}}
-[2025-05-11T19:16:42.457Z] [GET ALL] | {"table":"posts","filters":{"user_id":""}}
-[2025-05-11T19:17:37.799Z] [GET ALL] | {"table":"todos","filters":{"user_id":""}}
-[2025-05-11T19:17:37.819Z] [GET ALL] | {"table":"todos","filters":{"user_id":""}}
+[2025-05-11T19:16:42.435Z] [GET] | {"table":"posts","filters":{"user_id":""}}
+[2025-05-11T19:16:42.457Z] [GET] | {"table":"posts","filters":{"user_id":""}}
+[2025-05-11T19:17:37.799Z] [GET] | {"table":"todos","filters":{"user_id":""}}
+[2025-05-11T19:17:37.819Z] [GET] | {"table":"todos","filters":{"user_id":""}}
 [2025-05-11T19:18:36.760Z] [LOGIN ATTEMPT] | {"email":"Sincere@april.biz"}
 [2025-05-11T19:18:36.864Z] [LOGIN SUCCESS] | {"userId":1}
-[2025-05-11T21:31:51.292Z] [GET ALL] | {"table":"posts","filters":{"user_id":""}}
-[2025-05-11T21:31:51.311Z] [GET ALL] | {"table":"posts","filters":{"user_id":""}}
-[2025-05-11T21:31:57.079Z] [GET ALL] | {"table":"posts","filters":{"user_id":""}}
-[2025-05-11T21:31:57.092Z] [GET ALL] | {"table":"posts","filters":{"user_id":""}}
-[2025-05-11T21:31:58.938Z] [GET ALL] | {"table":"posts","filters":{"user_id":""}}
-[2025-05-11T21:32:03.222Z] [GET ALL] | {"table":"posts","filters":{"user_id":""}}
-[2025-05-11T21:55:16.344Z] [GET ALL] | {"table":"posts","filters":{"user_id":""}}
-[2025-05-11T21:55:16.353Z] [GET ALL] | {"table":"posts","filters":{"user_id":""}}
-[2025-05-11T22:52:50.620Z] [GET ALL] | {"table":"posts","filters":{"user_id":""}}
-[2025-05-11T22:52:50.638Z] [GET ALL] | {"table":"posts","filters":{"user_id":""}}
-[2025-05-11T23:21:57.278Z] [GET ALL] | {"table":"posts","filters":{"user_id":""}}
-[2025-05-11T23:21:57.291Z] [GET ALL] | {"table":"posts","filters":{"user_id":""}}
-[2025-05-12T08:47:04.579Z] [GET ALL] | {"table":"posts","filters":{"user_id":""}}
-[2025-05-12T08:47:04.614Z] [GET ALL] | {"table":"posts","filters":{"user_id":""}}
-[2025-05-12T09:15:58.020Z] [GET ALL] | {"table":"comments","filters":{"post_id":"1"}}
-[2025-05-12T09:25:27.546Z] [GET ALL] | {"table":"posts","filters":{"user_id":""}}
-[2025-05-12T09:25:27.536Z] [GET ALL] | {"table":"posts","filters":{"user_id":""}}
-[2025-05-12T11:34:54.368Z] [GET ALL] | {"table":"posts","filters":{"user_id":""}}
-[2025-05-12T11:34:54.382Z] [GET ALL] | {"table":"posts","filters":{"user_id":""}}
+[2025-05-11T21:31:51.292Z] [GET] | {"table":"posts","filters":{"user_id":""}}
+[2025-05-11T21:31:51.311Z] [GET] | {"table":"posts","filters":{"user_id":""}}
+[2025-05-11T21:31:57.079Z] [GET] | {"table":"posts","filters":{"user_id":""}}
+[2025-05-11T21:31:57.092Z] [GET] | {"table":"posts","filters":{"user_id":""}}
+[2025-05-11T21:31:58.938Z] [GET] | {"table":"posts","filters":{"user_id":""}}
+[2025-05-11T21:32:03.222Z] [GET] | {"table":"posts","filters":{"user_id":""}}
+[2025-05-11T21:55:16.344Z] [GET] | {"table":"posts","filters":{"user_id":""}}
+[2025-05-11T21:55:16.353Z] [GET] | {"table":"posts","filters":{"user_id":""}}
+[2025-05-11T22:52:50.620Z] [GET] | {"table":"posts","filters":{"user_id":""}}
+[2025-05-11T22:52:50.638Z] [GET] | {"table":"posts","filters":{"user_id":""}}
+[2025-05-11T23:21:57.278Z] [GET] | {"table":"posts","filters":{"user_id":""}}
+[2025-05-11T23:21:57.291Z] [GET] | {"table":"posts","filters":{"user_id":""}}
+[2025-05-12T08:47:04.579Z] [GET] | {"table":"posts","filters":{"user_id":""}}
+[2025-05-12T08:47:04.614Z] [GET] | {"table":"posts","filters":{"user_id":""}}
+[2025-05-12T09:15:58.020Z] [GET] | {"table":"comments","filters":{"post_id":"1"}}
+[2025-05-12T09:25:27.546Z] [GET] | {"table":"posts","filters":{"user_id":""}}
+[2025-05-12T09:25:27.536Z] [GET] | {"table":"posts","filters":{"user_id":""}}
+[2025-05-12T11:34:54.368Z] [GET] | {"table":"posts","filters":{"user_id":""}}
+[2025-05-12T11:34:54.382Z] [GET] | {"table":"posts","filters":{"user_id":""}}
 [2025-05-12T13:11:12.311Z] [LOGIN ATTEMPT] | {"email":"Sincere@april.biz"}
 [2025-05-12T13:11:12.621Z] [LOGIN SUCCESS] | {"userId":1}
 [2025-05-12T13:16:56.693Z] [LOGIN ATTEMPT] | {"email":"Sincere@april.biz"}
@@ -63,85 +63,85 @@
 [2025-05-12T14:38:38.117Z] [LOGIN SUCCESS] | {"userId":1}
 [2025-05-12T14:44:24.765Z] [LOGIN ATTEMPT] | {"email":"Sincere@april.biz"}
 [2025-05-12T14:44:24.870Z] [LOGIN SUCCESS] | {"userId":1}
-[2025-05-12T14:45:02.040Z] [GET ALL] | {"table":"posts","filters":{"user_id":"null"}}
-[2025-05-12T14:45:02.096Z] [GET ALL] | {"table":"posts","filters":{"user_id":"null"}}
-[2025-05-12T14:45:44.141Z] [GET ALL] | {"table":"todos","filters":{"user_id":"1"}}
-[2025-05-12T14:45:44.177Z] [GET ALL] | {"table":"todos","filters":{"user_id":"1"}}
-[2025-05-12T14:46:54.510Z] [GET ALL] | {"table":"posts","filters":{"user_id":"null"}}
-[2025-05-12T14:49:34.940Z] [GET ALL] | {"table":"posts","filters":{"user_id":"null"}}
+[2025-05-12T14:45:02.040Z] [GET] | {"table":"posts","filters":{"user_id":"null"}}
+[2025-05-12T14:45:02.096Z] [GET] | {"table":"posts","filters":{"user_id":"null"}}
+[2025-05-12T14:45:44.141Z] [GET] | {"table":"todos","filters":{"user_id":"1"}}
+[2025-05-12T14:45:44.177Z] [GET] | {"table":"todos","filters":{"user_id":"1"}}
+[2025-05-12T14:46:54.510Z] [GET] | {"table":"posts","filters":{"user_id":"null"}}
+[2025-05-12T14:49:34.940Z] [GET] | {"table":"posts","filters":{"user_id":"null"}}
 [2025-05-12T14:50:54.479Z] [LOGIN ATTEMPT] | {"email":"Sincere@april.biz"}
 [2025-05-12T14:50:54.701Z] [LOGIN SUCCESS] | {"userId":1}
-[2025-05-12T14:51:09.477Z] [GET ALL] | {"table":"posts","filters":{"user_id":1}}
-[2025-05-12T14:51:15.325Z] [GET ALL] | {"table":"posts","filters":{"user_id":1}}
-[2025-05-12T14:54:13.939Z] [GET ALL] | {"table":"posts","filters":{"user_id":"null"}}
+[2025-05-12T14:51:09.477Z] [GET] | {"table":"posts","filters":{"user_id":1}}
+[2025-05-12T14:51:15.325Z] [GET] | {"table":"posts","filters":{"user_id":1}}
+[2025-05-12T14:54:13.939Z] [GET] | {"table":"posts","filters":{"user_id":"null"}}
 [2025-05-12T14:54:23.551Z] [LOGIN ATTEMPT] | {"email":"Sincere@april.biz"}
 [2025-05-12T14:54:23.721Z] [LOGIN SUCCESS] | {"userId":1}
-[2025-05-12T14:54:25.646Z] [GET ALL] | {"table":"posts","filters":{"user_id":"null"}}
-[2025-05-12T14:54:25.672Z] [GET ALL] | {"table":"posts","filters":{"user_id":"null"}}
+[2025-05-12T14:54:25.646Z] [GET] | {"table":"posts","filters":{"user_id":"null"}}
+[2025-05-12T14:54:25.672Z] [GET] | {"table":"posts","filters":{"user_id":"null"}}
 [2025-05-12T14:54:50.523Z] [LOGIN ATTEMPT] | {"email":"Sincere@april.biz"}
 [2025-05-12T14:54:50.689Z] [LOGIN SUCCESS] | {"userId":1}
-[2025-05-12T14:54:52.495Z] [GET ALL] | {"table":"posts","filters":{"user_id":1}}
-[2025-05-12T14:54:52.532Z] [GET ALL] | {"table":"posts","filters":{"user_id":1}}
-[2025-05-12T14:54:55.563Z] [GET ALL] | {"table":"todos","filters":{"user_id":"1"}}
-[2025-05-12T14:54:55.598Z] [GET ALL] | {"table":"todos","filters":{"user_id":"1"}}
+[2025-05-12T14:54:52.495Z] [GET] | {"table":"posts","filters":{"user_id":1}}
+[2025-05-12T14:54:52.532Z] [GET] | {"table":"posts","filters":{"user_id":1}}
+[2025-05-12T14:54:55.563Z] [GET] | {"table":"todos","filters":{"user_id":"1"}}
+[2025-05-12T14:54:55.598Z] [GET] | {"table":"todos","filters":{"user_id":"1"}}
 [2025-05-12T14:56:29.869Z] [LOGIN ATTEMPT] | {"email":"Sincere@april.biz"}
 [2025-05-12T14:56:30.027Z] [LOGIN SUCCESS] | {"userId":1}
 [2025-05-12T14:56:48.056Z] [LOGIN ATTEMPT] | {"email":"Sincere@april.biz"}
 [2025-05-12T14:56:48.212Z] [LOGIN SUCCESS] | {"userId":1}
-[2025-05-12T14:56:49.392Z] [GET ALL] | {"table":"posts","filters":{"user_id":1}}
-[2025-05-12T14:56:49.414Z] [GET ALL] | {"table":"posts","filters":{"user_id":1}}
-[2025-05-12T14:56:55.547Z] [GET ALL] | {"table":"comments","filters":{"post_id":"1"}}
-[2025-05-12T15:04:24.815Z] [GET ALL] | {"table":"posts","filters":{"user_id":1}}
-[2025-05-12T15:04:24.895Z] [GET ALL] | {"table":"posts","filters":{"user_id":1}}
-[2025-05-12T15:04:28.702Z] [GET ALL] | {"table":"posts","filters":{"user_id":1}}
-[2025-05-12T15:04:28.729Z] [GET ALL] | {"table":"posts","filters":{"user_id":1}}
-[2025-05-12T15:04:31.709Z] [GET ALL] | {"table":"posts","filters":{"user_id":1}}
-[2025-05-12T15:04:31.731Z] [GET ALL] | {"table":"posts","filters":{"user_id":1}}
-[2025-05-12T15:04:36.618Z] [GET ALL] | {"table":"posts","filters":{"user_id":1}}
-[2025-05-12T15:04:36.634Z] [GET ALL] | {"table":"posts","filters":{"user_id":1}}
-[2025-05-12T15:04:44.567Z] [GET ALL] | {"table":"posts","filters":{"user_id":1}}
-[2025-05-12T15:04:44.580Z] [GET ALL] | {"table":"posts","filters":{"user_id":1}}
+[2025-05-12T14:56:49.392Z] [GET] | {"table":"posts","filters":{"user_id":1}}
+[2025-05-12T14:56:49.414Z] [GET] | {"table":"posts","filters":{"user_id":1}}
+[2025-05-12T14:56:55.547Z] [GET] | {"table":"comments","filters":{"post_id":"1"}}
+[2025-05-12T15:04:24.815Z] [GET] | {"table":"posts","filters":{"user_id":1}}
+[2025-05-12T15:04:24.895Z] [GET] | {"table":"posts","filters":{"user_id":1}}
+[2025-05-12T15:04:28.702Z] [GET] | {"table":"posts","filters":{"user_id":1}}
+[2025-05-12T15:04:28.729Z] [GET] | {"table":"posts","filters":{"user_id":1}}
+[2025-05-12T15:04:31.709Z] [GET] | {"table":"posts","filters":{"user_id":1}}
+[2025-05-12T15:04:31.731Z] [GET] | {"table":"posts","filters":{"user_id":1}}
+[2025-05-12T15:04:36.618Z] [GET] | {"table":"posts","filters":{"user_id":1}}
+[2025-05-12T15:04:36.634Z] [GET] | {"table":"posts","filters":{"user_id":1}}
+[2025-05-12T15:04:44.567Z] [GET] | {"table":"posts","filters":{"user_id":1}}
+[2025-05-12T15:04:44.580Z] [GET] | {"table":"posts","filters":{"user_id":1}}
 [2025-05-12T15:19:21.438Z] [LOGIN ATTEMPT] | {"email":"Sincere@april.biz"}
 [2025-05-12T15:19:21.565Z] [LOGIN SUCCESS] | {"userId":1}
-[2025-05-12T15:19:40.524Z] [GET ALL] | {"table":"posts","filters":{"user_id":1}}
+[2025-05-12T15:19:40.524Z] [GET] | {"table":"posts","filters":{"user_id":1}}
 [2025-05-12T15:19:40.574Z] [LOGIN ATTEMPT] | {"email":"Sincere@april.biz"}
 [2025-05-12T15:19:40.801Z] [LOGIN SUCCESS] | {"userId":1}
-[2025-05-12T15:19:49.547Z] [GET ALL] | {"table":"posts","filters":{"user_id":1}}
-[2025-05-12T15:20:18.832Z] [GET ALL] | {"table":"posts","filters":{"user_id":1}}
+[2025-05-12T15:19:49.547Z] [GET] | {"table":"posts","filters":{"user_id":1}}
+[2025-05-12T15:20:18.832Z] [GET] | {"table":"posts","filters":{"user_id":1}}
 [2025-05-12T15:23:28.597Z] [LOGIN ATTEMPT] | {"email":"Sincere@april.biz"}
 [2025-05-12T15:23:28.755Z] [LOGIN SUCCESS] | {"userId":1}
 [2025-05-12T15:24:54.679Z] [LOGIN ATTEMPT] | {"email":"Sincere@april.biz"}
 [2025-05-12T15:24:54.819Z] [LOGIN SUCCESS] | {"userId":1}
 [2025-05-12T15:25:38.431Z] [LOGIN ATTEMPT] | {"email":"Sincere@april.biz"}
 [2025-05-12T15:25:38.573Z] [LOGIN SUCCESS] | {"userId":1}
-[2025-05-12T15:26:31.587Z] [GET ALL] | {"table":"posts","filters":{"user_id":1}}
-[2025-05-12T15:26:33.167Z] [GET ALL] | {"table":"posts","filters":{"user_id":1}}
+[2025-05-12T15:26:31.587Z] [GET] | {"table":"posts","filters":{"user_id":1}}
+[2025-05-12T15:26:33.167Z] [GET] | {"table":"posts","filters":{"user_id":1}}
 [2025-05-12T15:26:55.452Z] [LOGIN ATTEMPT] | {"email":"Sincere@april.biz"}
 [2025-05-12T15:26:55.597Z] [LOGIN SUCCESS] | {"userId":1}
-[2025-05-12T15:27:04.503Z] [GET ALL] | {"table":"posts","filters":{"user_id":1}}
-[2025-05-12T15:27:04.522Z] [GET ALL] | {"table":"posts","filters":{"user_id":1}}
+[2025-05-12T15:27:04.503Z] [GET] | {"table":"posts","filters":{"user_id":1}}
+[2025-05-12T15:27:04.522Z] [GET] | {"table":"posts","filters":{"user_id":1}}
 [2025-05-12T15:27:47.122Z] [CREATE] Item created | {"table":"posts","data":{"user_id":1,"title":"new post","body":"lalal","is_active":true}}
-[2025-05-12T15:27:56.056Z] [GET ALL] | {"table":"posts","filters":{"user_id":1}}
-[2025-05-12T15:27:59.000Z] [GET ALL] | {"table":"posts","filters":{"user_id":1}}
-[2025-05-12T15:28:02.770Z] [GET ALL] | {"table":"posts","filters":{"user_id":1}}
-[2025-05-12T15:28:07.149Z] [GET ALL] | {"table":"posts","filters":{"user_id":1}}
-[2025-05-12T15:28:54.015Z] [GET ALL] | {"table":"posts","filters":{"user_id":1}}
-[2025-05-12T15:28:54.761Z] [GET ALL] | {"table":"posts","filters":{"user_id":1}}
-[2025-05-12T15:28:57.910Z] [GET ALL] | {"table":"posts","filters":{"user_id":1}}
-[2025-05-12T15:29:20.843Z] [GET ALL] | {"table":"posts","filters":{"user_id":1}}
-[2025-05-12T15:29:20.853Z] [GET ALL] | {"table":"posts","filters":{"user_id":1}}
-[2025-05-12T15:29:22.609Z] [GET ALL] | {"table":"posts","filters":{"user_id":1}}
-[2025-05-12T15:29:22.620Z] [GET ALL] | {"table":"posts","filters":{"user_id":1}}
-[2025-05-12T15:29:24.729Z] [GET ALL] | {"table":"posts","filters":{"user_id":1}}
-[2025-05-12T15:29:24.749Z] [GET ALL] | {"table":"posts","filters":{"user_id":1}}
+[2025-05-12T15:27:56.056Z] [GET] | {"table":"posts","filters":{"user_id":1}}
+[2025-05-12T15:27:59.000Z] [GET] | {"table":"posts","filters":{"user_id":1}}
+[2025-05-12T15:28:02.770Z] [GET] | {"table":"posts","filters":{"user_id":1}}
+[2025-05-12T15:28:07.149Z] [GET] | {"table":"posts","filters":{"user_id":1}}
+[2025-05-12T15:28:54.015Z] [GET] | {"table":"posts","filters":{"user_id":1}}
+[2025-05-12T15:28:54.761Z] [GET] | {"table":"posts","filters":{"user_id":1}}
+[2025-05-12T15:28:57.910Z] [GET] | {"table":"posts","filters":{"user_id":1}}
+[2025-05-12T15:29:20.843Z] [GET] | {"table":"posts","filters":{"user_id":1}}
+[2025-05-12T15:29:20.853Z] [GET] | {"table":"posts","filters":{"user_id":1}}
+[2025-05-12T15:29:22.609Z] [GET] | {"table":"posts","filters":{"user_id":1}}
+[2025-05-12T15:29:22.620Z] [GET] | {"table":"posts","filters":{"user_id":1}}
+[2025-05-12T15:29:24.729Z] [GET] | {"table":"posts","filters":{"user_id":1}}
+[2025-05-12T15:29:24.749Z] [GET] | {"table":"posts","filters":{"user_id":1}}
 [2025-05-12T20:08:10.911Z] [LOGIN ATTEMPT] | {"email":"Sincere@april.biz"}
 [2025-05-12T20:08:11.150Z] [LOGIN SUCCESS] | {"userId":1}
-[2025-05-12T20:08:13.419Z] [GET ALL] | {"table":"posts","filters":{"user_id":""}}
-[2025-05-12T20:08:13.440Z] [GET ALL] | {"table":"posts","filters":{"user_id":""}}
+[2025-05-12T20:08:13.419Z] [GET] | {"table":"posts","filters":{"user_id":""}}
+[2025-05-12T20:08:13.440Z] [GET] | {"table":"posts","filters":{"user_id":""}}
 [2025-05-12T20:13:31.230Z] [LOGIN ATTEMPT] | {"email":"Sincere@april.biz"}
 [2025-05-12T20:13:31.635Z] [LOGIN SUCCESS] | {"userId":1}
-[2025-05-12T20:13:34.000Z] [GET ALL] | {"table":"posts","filters":{"user_id":""}}
-[2025-05-12T20:13:34.090Z] [GET ALL] | {"table":"posts","filters":{"user_id":""}}
+[2025-05-12T20:13:34.000Z] [GET] | {"table":"posts","filters":{"user_id":""}}
+[2025-05-12T20:13:34.090Z] [GET] | {"table":"posts","filters":{"user_id":""}}
 [2025-05-12T20:46:29.956Z] [LOGIN ATTEMPT] | {"email":"Sincere@april.biz"}
 [2025-05-12T20:46:30.307Z] [LOGIN SUCCESS] | {"userId":1}
 [2025-05-12T20:46:48.586Z] [LOGIN ATTEMPT] | {"email":"Sincere@april.biz"}
@@ -150,23 +150,69 @@
 [2025-05-12T21:08:37.664Z] [LOGIN SUCCESS] | {"userId":1}
 [2025-05-12T21:08:49.435Z] [LOGIN ATTEMPT] | {"email":"Sincere@april.biz"}
 [2025-05-12T21:08:49.571Z] [LOGIN SUCCESS] | {"userId":1}
-[2025-05-12T21:08:53.739Z] [GET ALL] | {"table":"posts","filters":{"user_id":""}}
-[2025-05-12T21:08:53.780Z] [GET ALL] | {"table":"posts","filters":{"user_id":""}}
-[2025-05-12T21:09:24.632Z] [UPDATE] | {"table":"posts","id":"3","data":{"id":3,"title":"Post 3 for user 1","body":"Body of post 3 for user 1a"}}
-[2025-05-12T21:14:56.642Z] [GET ALL] | {"table":"todos","filters":{"user_id":"1"}}
-[2025-05-12T21:14:56.683Z] [GET ALL] | {"table":"todos","filters":{"user_id":"1"}}
-[2025-05-12T21:14:59.725Z] [UPDATE] | {"table":"todos","id":"8","data":{"title":"Todo 8 for user 1","user_id":1,"is_active":1,"completed":true}}
-[2025-05-12T21:20:16.950Z] [LOGIN ATTEMPT] | {"email":"Sincere@april.biz"}
-[2025-05-12T21:20:17.167Z] [LOGIN SUCCESS] | {"userId":1}
-[2025-05-12T21:20:26.474Z] [GET ALL] | {"table":"posts","filters":{"user_id":""}}
-[2025-05-12T21:20:26.504Z] [GET ALL] | {"table":"posts","filters":{"user_id":""}}
-[2025-05-12T21:24:04.419Z] [LOGIN ATTEMPT] | {"email":"Sincere@april.biz"}
-[2025-05-12T21:24:04.788Z] [LOGIN SUCCESS] | {"userId":1}
-[2025-05-12T21:24:06.821Z] [GET ALL] | {"table":"posts","filters":{"user_id":""}}
-[2025-05-12T21:24:06.859Z] [GET ALL] | {"table":"posts","filters":{"user_id":""}}
-[2025-05-12T21:28:41.083Z] [LOGIN ATTEMPT] | {"email":"Sincere@april.biz"}
-[2025-05-12T21:28:41.964Z] [LOGIN SUCCESS] | {"userId":1}
-[2025-05-12T21:29:51.799Z] [LOGIN ATTEMPT] | {"email":"Sincere@april.biz"}
-[2025-05-12T21:29:51.951Z] [LOGIN SUCCESS] | {"userId":1}
-[2025-05-12T21:59:33.878Z] [LOGIN ATTEMPT] | {"email":"Sincere@april.biz"}
-[2025-05-12T21:59:34.073Z] [LOGIN SUCCESS] | {"userId":1}
+[2025-05-13T09:53:05.189Z] [GET] | {"table":"todos","filters":{"user_id":"1"}}
+[2025-05-13T09:53:05.290Z] [GET] | {"table":"todos","filters":{"user_id":"1"}}
+[2025-05-13T10:34:48.801Z] [GET] | {"table":"todos","filters":{"user_id":"1"}}
+[2025-05-13T10:34:49.019Z] [GET] | {"table":"todos","filters":{"user_id":"1"}}
+[2025-05-13T10:53:15.441Z] [LOGIN ATTEMPT] | {"email":"Sincere@april.biz"}
+[2025-05-13T10:53:15.714Z] [LOGIN SUCCESS] | {"userId":1}
+[2025-05-13T10:53:17.042Z] [GET] | {"table":"posts","filters":{"user_id":""}}
+[2025-05-13T10:53:17.075Z] [GET] | {"table":"posts","filters":{"user_id":""}}
+[2025-05-13T10:53:18.072Z] [GET] | {"table":"todos","filters":{"user_id":"1"}}
+[2025-05-13T10:53:18.095Z] [GET] | {"table":"todos","filters":{"user_id":"1"}}
+[2025-05-13T11:01:08.817Z] [LOGIN ATTEMPT] | {"email":"Sincere@april.biz"}
+[2025-05-13T11:01:09.036Z] [LOGIN SUCCESS] | {"userId":1}
+[2025-05-13T11:01:10.192Z] [GET] | {"table":"posts","filters":{"user_id":""}}
+[2025-05-13T11:01:10.220Z] [GET] | {"table":"posts","filters":{"user_id":""}}
+[2025-05-13T11:01:10.902Z] [GET] | {"table":"todos","filters":{"user_id":"1"}}
+[2025-05-13T11:01:10.923Z] [GET] | {"table":"todos","filters":{"user_id":"1"}}
+[2025-05-13T11:08:56.305Z] [GET] | {"table":"todos","filters":{"user_id":"1"}}
+[2025-05-13T11:08:56.397Z] [GET] | {"table":"todos","filters":{"user_id":"1"}}
+[2025-05-13T11:09:01.049Z] [GET] | {"table":"posts","filters":{"user_id":""}}
+[2025-05-13T11:09:01.066Z] [GET] | {"table":"posts","filters":{"user_id":""}}
+[2025-05-13T11:09:02.833Z] [LOGIN ATTEMPT] | {"email":"Sincere@april.biz"}
+[2025-05-13T11:09:02.975Z] [LOGIN SUCCESS] | {"userId":1}
+[2025-05-13T11:09:06.245Z] [GET] | {"table":"posts","filters":{"user_id":""}}
+[2025-05-13T11:09:06.266Z] [GET] | {"table":"posts","filters":{"user_id":""}}
+[2025-05-13T11:09:07.600Z] [GET] | {"table":"todos","filters":{"user_id":"1"}}
+[2025-05-13T11:09:07.624Z] [GET] | {"table":"todos","filters":{"user_id":"1"}}
+[2025-05-13T11:09:12.546Z] [CREATE] Item created | {"table":"todos","data":{"user_id":1,"completed":false,"title":"aaa","is_active":true}}
+[2025-05-13T11:09:27.581Z] [UPDATE] | {"table":"todos","id":"1","data":{"title":"Todo 1 for user 1","user_id":1,"is_active":1,"completed":true}}
+[2025-05-13T11:09:30.507Z] [GET] | {"table":"todos","filters":{"user_id":"1"}}
+[2025-05-13T11:09:30.522Z] [GET] | {"table":"todos","filters":{"user_id":"1"}}
+[2025-05-13T11:15:13.445Z] [GET] | {"table":"todos","filters":{"user_id":"1"}}
+[2025-05-13T11:15:13.465Z] [GET] | {"table":"todos","filters":{"user_id":"1"}}
+[2025-05-13T11:16:18.883Z] [LOGIN ATTEMPT] | {"email":"Sincere@april.biz"}
+[2025-05-13T11:16:18.981Z] [LOGIN SUCCESS] | {"userId":1}
+[2025-05-13T11:16:23.587Z] [GET] | {"table":"users","filters":{"id":"1"}}
+[2025-05-13T11:16:23.600Z] [GET] | {"table":"users","filters":{"id":"1"}}
+[2025-05-13T11:16:28.050Z] [GET] | {"table":"users","filters":{"id":"1"}}
+[2025-05-13T11:16:28.060Z] [GET] | {"table":"users","filters":{"id":"1"}}
+[2025-05-13T11:16:35.196Z] [GET] | {"table":"posts","filters":{"user_id":""}}
+[2025-05-13T11:16:35.208Z] [GET] | {"table":"posts","filters":{"user_id":""}}
+[2025-05-13T11:16:40.766Z] [GET] | {"table":"posts","filters":{"user_id":1}}
+[2025-05-13T11:16:53.603Z] [GET] | {"table":"comments","filters":{"post_id":"2"}}
+[2025-05-13T11:17:00.657Z] [CREATE] Item created | {"table":"comments","data":{"email":"Sincere@april.biz","post_id":2,"body":"אא","is_active":true}}
+[2025-05-13T11:17:16.087Z] [GET] | {"table":"posts","filters":{"user_id":""}}
+[2025-05-13T11:17:21.179Z] [GET] | {"table":"posts","filters":{"user_id":1}}
+[2025-05-13T11:17:32.805Z] [CREATE] Item created | {"table":"posts","data":{"user_id":1,"title":"ססס","body":"הייי","is_active":true}}
+[2025-05-13T11:17:38.452Z] [GET] | {"table":"comments","filters":{"post_id":"18"}}
+[2025-05-13T11:18:34.419Z] [GET] | {"table":"comments","filters":{"post_id":"18"}}
+[2025-05-13T11:18:43.600Z] [GET] | {"table":"todos","filters":{"user_id":"1"}}
+[2025-05-13T11:18:43.611Z] [GET] | {"table":"todos","filters":{"user_id":"1"}}
+[2025-05-13T11:18:51.848Z] [GET] | {"table":"posts","filters":{"user_id":""}}
+[2025-05-13T11:18:51.859Z] [GET] | {"table":"posts","filters":{"user_id":""}}
+[2025-05-13T11:18:56.958Z] [GET] | {"table":"comments","filters":{"post_id":"2"}}
+[2025-05-13T11:19:07.498Z] [UPDATE] | {"table":"comments","id":"25","data":{"id":25,"body":"בבב"}}
+[2025-05-13T11:19:22.438Z] [GET] | {"table":"todos","filters":{"user_id":"1"}}
+[2025-05-13T11:19:22.452Z] [GET] | {"table":"todos","filters":{"user_id":"1"}}
+[2025-05-13T11:19:42.385Z] [UPDATE] | {"table":"todos","id":"4","data":{"title":"Todo 4 for user 1","user_id":1,"is_active":1,"completed":false}}
+[2025-05-13T11:19:43.071Z] [UPDATE] | {"table":"todos","id":"4","data":{"title":"Todo 4 for user 1","user_id":1,"is_active":1,"completed":true}}
+[2025-05-13T11:19:43.639Z] [UPDATE] | {"table":"todos","id":"4","data":{"title":"Todo 4 for user 1","user_id":1,"is_active":1,"completed":false}}
+[2025-05-13T11:19:44.214Z] [UPDATE] | {"table":"todos","id":"4","data":{"title":"Todo 4 for user 1","user_id":1,"is_active":1,"completed":true}}
+[2025-05-13T11:20:00.038Z] [UPDATE] | {"table":"todos","id":"2","data":{"id":2,"title":"מיכל"}}
+[2025-05-13T11:20:02.096Z] [UPDATE] | {"table":"todos","id":"2","data":{"title":"מיכל","user_id":1,"is_active":1,"completed":true}}
+[2025-05-13T11:20:03.326Z] [UPDATE] | {"table":"todos","id":"2","data":{"title":"מיכל","user_id":1,"is_active":1,"completed":false}}
+[2025-05-13T11:20:12.633Z] [UPDATE] | {"table":"todos","id":"2","data":{"title":"מיכל","user_id":1,"is_active":1,"completed":true}}
+[2025-05-13T11:20:20.277Z] [GET] | {"table":"todos","filters":{"user_id":"1"}}
+[2025-05-13T11:20:20.287Z] [GET] | {"table":"todos","filters":{"user_id":"1"}}

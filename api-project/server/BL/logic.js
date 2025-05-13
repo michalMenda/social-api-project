@@ -47,19 +47,22 @@ async function createItem(table, data) {
 }
 
 async function getItems(table, filters = {}) {
+    const result = dal.get(table, filters);
     log(`[GET]`, { table, filters });
-    return dal.get(table, filters);
+    return result;
 }
 
 
 async function updateItem(table, id, data) {
+    const result = dal.update(table, id, data);
     log(`[UPDATE]`, { table, id, data });
-    return dal.update(table, id, data);
+    return result;
 }
 
 async function deleteItem(table, id) {
+    const result = dal.remove(table, id);
     log(`[DELETE]`, { table, id });
-    return dal.remove(table, id);
+    return result;
 }
 
 async function loginUser(email, password) {

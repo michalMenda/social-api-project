@@ -1,4 +1,3 @@
-// database/initialize.js
 const mysql = require('../server/DAL/connection');
 const fs = require('fs');
 const path = require('path');
@@ -26,7 +25,6 @@ async function ensureColumnExists(table, column, definition) {
 
 async function initializeDatabase() {
   try {
-    console.log('🔧 Creating tables (if not exists)…');
 
     await mysql.execute(`
       CREATE TABLE IF NOT EXISTS users (
@@ -78,15 +76,13 @@ async function initializeDatabase() {
 
     console.log('🔧 Ensuring required columns exist…');
 
-
-
     for (const tbl of ['users', 'todos', 'posts', 'comments', 'passwords']) {
       await ensureColumnExists(tbl, 'is_active', 'BOOLEAN DEFAULT TRUE');
     }
 
     await ensureColumnExists('comments', 'email', 'VARCHAR(255)');
 
-    console.log('🔧 Dropping old trg_delete_passwords (if exists)…');
+    console.log(' Dropping old trg_delete_passwords (if exists)…');
     await mysql.query(`DROP TRIGGER IF EXISTS trg_delete_passwords`);
 
     console.log('🔧 Creating trg_delete_passwords…');
@@ -100,8 +96,6 @@ async function initializeDatabase() {
   END
 `);
 
-
-    console.log('🔧 Dropping old triggers…');
     await mysql.query(`DROP TRIGGER IF EXISTS deactivate_user_todos`);
     await mysql.query(`DROP TRIGGER IF EXISTS deactivate_post_comments`);
 
@@ -177,9 +171,9 @@ async function initializeDatabase() {
       );
     }
 
-    console.log('✅ Database initialized successfully!');
+    console.log(' Database initialized successfully!');
   } catch (err) {
-    console.error('❌ Error initializing database:', err);
+    console.error(' Error initializing database:', err);
   } finally {
     await mysql.end();
   }

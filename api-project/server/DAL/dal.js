@@ -1,7 +1,5 @@
 const pool = require('./connection');
 
-// Get all rows from a table (only active rows)
-// Get all rows from a table (only active rows, with optional filters)
 async function get(table, filters = {}) {
 
     let sql = 'SELECT * FROM ?? WHERE is_active = true';
@@ -13,10 +11,6 @@ async function get(table, filters = {}) {
         params.push(filters[key]);
     }
 }
-
-
-    console.log('SQL:', sql);
-    console.log('Params:', params);
 
     const [rows] = await pool.query(sql, params);
     return rows;
@@ -58,20 +52,19 @@ async function createUserWithPasswordHash(userData, password_hash) {
     }
 }
 
-// Create a new row (default to active = true if not specified)
+// Create a new row 
 async function create(table, data) {
     data.is_active ??= true;
     const [res] = await pool.query('INSERT INTO ?? SET ?', [table, data]);
     return { id: res.insertId, ...data };
   }
   
-
 // Update an existing row
 async function update(table, id, data) {
     await pool.query('UPDATE ?? SET ? WHERE id = ?', [table, data, id]);
 }
 
-// Soft delete a row (mark as inactive)
+// Soft delete a row 
 async function remove(table, id) {
     await pool.query('UPDATE ?? SET is_active = false WHERE id = ?', [table, id]);
 }

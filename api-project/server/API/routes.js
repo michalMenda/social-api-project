@@ -18,7 +18,6 @@ function createGenericRouter(table) {
     });
 
 
-
     router.post('/', async (req, res) => {
         try {
             const body = { ...req.body };
