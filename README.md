@@ -16,8 +16,8 @@ Create an .env file in the server/config directory with the following parameters
 DB_HOST=localhost     # Database server address
 DB_USER=root          # Database username
 DB_PASSWORD=password  # Database password
-DB_NAME=project_db    # Database name```
-
+DB_NAME=project_db    # Database name
+```
 # Server settings
 PORT=3001             # Server port
 NODE_ENV=development  # Runtime environment
