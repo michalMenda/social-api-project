@@ -11,7 +11,7 @@ The project follows a three-tier architecture:
 ### .env File
 Create an .env file in the server/config directory with the following parameters:
 
-# Database connection details
+## Database connection details
 ```
 DB_HOST=localhost     # Database server address
 DB_USER=root          # Database username
