@@ -5,6 +5,9 @@ This project implements a complete REST API system connecting a React client, No
 
 ## Architecture
 The project follows a three-tier architecture:
+- **Presentation Layer**: React (client-side)
+- **Logic Layer**: Node.js with Express (server-side)
+- **Data Layer**: MySQL (database)
 
 # Environment Setup
 
@@ -29,33 +32,25 @@ JWT_SECRET=your_jwt_secret_key  # JWT encryption key
 The server provides the following API routes:
 
 ### Users
-GET /api/users - Get list of users
-GET /api/users/:id - Get user by ID
-POST /api/users - Create new user
-PUT /api/users/:id - Update existing user
-DELETE /api/users/:id - Delete user
+- `GET /api/users` - Get list of users
+- `GET /api/users/:id` - Get user by ID
+- `POST /api/users` - Create new user
+- `PUT /api/users/:id` - Update existing user
+- `DELETE /api/users/:id` - Delete user
 
 ### Tasks
-GET /api/todos - Get list of tasks
-GET /api/todos/:id - Get task by ID
-Additional routes for task management
+- `GET /api/todos` - Get list of tasks
+- `GET /api/todos/:id` - Get task by ID
+- Additional routes for task management
 
 ### Posts and Comments
-GET /api/posts - Get list of posts
-GET /api/posts/:id - Get post by ID
-GET /api/posts/:id/comments - Get comments for a post
-Additional routes for post and comment management
+- `GET /api/posts` - Get list of posts
+- `GET /api/posts/:id` - Get post by ID
+- `GET /api/posts/:id/comments` - Get comments for a post
+- Additional routes for post and comment management
 
 ### Authentication
-POST /api/login - User login
-
-## Query Parameters
-The API supports advanced query parameters:
-?_limit=n - Limit number of results
-?_page=n - Pagination
-?_sort=field - Sort by field
-?userId=n - Filter by user
-Additional parameters depending on resource type
+- `POST /api/login` - User login
 
 ## Installation and Running
 
@@ -68,13 +63,13 @@ cd database
 node initialize.js
 
 ## Security
-The project uses JWT for user authentication
-Passwords are encrypted in the database
-The .env file is not uploaded to the code repository
-Permission checks are performed on the server side
+The project uses JWT for user authentication  
+Passwords are encrypted in the database  
+The .env file is not uploaded to the code repository  
+Permission checks are performed on the server side  
 
 ## Technologies
-Client-side: React, React Router, Fetch API
-Server-side: Node.js, Express, JWT
-Database: MySQL
-Development tools: npm, nodemon, dotenv
+Client-side: React, React Router, Fetch API  
+Server-side: Node.js, Express, JWT  
+Database: MySQL  
+Development tools: npm, nodemon, dotenv  
