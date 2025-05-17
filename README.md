@@ -18,7 +18,7 @@ DB_USER=root          # Database username
 DB_PASSWORD=password  # Database password
 DB_NAME=project_db    # Database name
 ```
-# Server settings
+## Server settings
 PORT=3001             # Server port
 NODE_ENV=development  # Runtime environment
 
