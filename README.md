@@ -6,7 +6,7 @@ This project implements a complete REST API system connecting a React client, No
 ## Architecture
 The project follows a three-tier architecture:
 
-## Environment Setup
+# Environment Setup
 
 ### .env File
 Create an .env file in the server/config directory with the following parameters:
@@ -22,7 +22,7 @@ DB_NAME=project_db    # Database name
 PORT=3001             # Server port
 NODE_ENV=development  # Runtime environment
 
-# Security settings (optional)
+## Security settings (optional)
 JWT_SECRET=your_jwt_secret_key  # JWT encryption key
 
 ## API Routes
