@@ -1,4 +1,4 @@
-# REST API Project with React, Node.js, and 
+# REST API Project with React, Node.js, and MySQL
 
 ## Overview
 This project implements a complete REST API system connecting a React client, Node.js server with Express, and MySQL database. The system enables management of users, tasks, posts, and comments.
